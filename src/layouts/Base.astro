@@ -1,0 +1,68 @@
+---
+import "@fontsource-variable/noto-sans-sinhala/wdth.css";
+import "@fontsource-variable/figtree/wght.css";
+import "../styles/site.css";
+import { siteConfig } from "../config/site";
+
+interface Props {
+  title: string;
+  description: string;
+  lang: string;
+  initial: string;
+  /** When false the page is the neutral version only: no chooser, no campaign routes. */
+  personalize: boolean;
+  status: string;
+}
+const { title, description, lang, initial, personalize, status } = Astro.props;
+
+// Every audience version points at the root so the campaign routes never compete with it in search.
+const canonical = siteConfig.url ? new URL("/", siteConfig.url).toString() : null;
+const initScript = `// Runs before first paint. A choice the visitor made on this exact page wins; otherwise ?segment= on the neutral page.
+(function () {
+  try {
+    var d = document.documentElement;
+    var ok = ["extra_income", "business_growth"];
+    var saved = (sessionStorage.getItem("wdm_seg_manual") || "").split("|");
+    var q = new URLSearchParams(location.search).get("segment");
+    if (saved[0] === location.pathname && ok.indexOf(saved[1]) > -1) { d.setAttribute("data-seg", saved[1]); d.setAttribute("data-seg-source", "manual"); }
+    else if (q && ok.indexOf(q) > -1 && d.getAttribute("data-seg") === "neutral") { d.setAttribute("data-seg", q); d.setAttribute("data-seg-source", "url_param"); }
+  } catch (e) {}
+})();`;
+const htmlLang = lang.split("-")[0];
+---
+
+<!doctype html>
+<html lang={htmlLang} data-seg={initial} data-seg-source={initial === "neutral" ? "default" : "route"} data-course-status={status}>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    {
+      personalize && (
+        <script is:inline set:html={initScript} />
+      )
+    }
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    {canonical && <link rel="canonical" href={canonical} />}
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:locale" content={lang.replace("-", "_")} />
+    {canonical && <meta property="og:url" content={canonical} />}
+    <meta name="twitter:card" content="summary" />
+    <meta name="theme-color" content="#f6f8fd" />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    {import.meta.env.PROD && !siteConfig.url && <meta name="robots" content="noindex" />}
+  </head>
+  <body>
+    <a class="skip" href="#main">{siteConfig.skipLabel}</a>
+    <slot name="nav" />
+    <main id="main">
+      <slot />
+    </main>
+    <slot name="after" />
+    <script>
+      import "../lib/page-init";
+    </script>
+  </body>
+</html>

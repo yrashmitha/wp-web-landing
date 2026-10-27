@@ -1,0 +1,56 @@
+---
+import type { LoadedContent } from "../../content/content-loader";
+import { siteConfig } from "../../config/site";
+import Cta from "../ui/Cta.astro";
+
+interface Props {
+  part: "nav" | "footer" | "sticky" | "consent";
+  content: LoadedContent;
+}
+const { part, content } = Astro.props;
+const { page } = content;
+---
+
+{
+  part === "nav" && (
+    <header class="nav">
+      <div class="container nav__inner">
+        <a class="nav__brand" href="#hero">
+          {page.navigation.brandLabel}
+        </a>
+      </div>
+    </header>
+  )
+}
+
+{
+  part === "sticky" && page.settings.showMobileStickyCTA && (
+    <div id="sticky-cta" class="sticky-cta" data-visible="false">
+      <Cta id={content.ctaIds.sticky} location="mobile_sticky" label={page.navigation.primaryCTA} />
+    </div>
+  )
+}
+
+{
+  part === "consent" && (
+    <div id="consent-banner" class="consent" role="region" aria-label="Analytics consent" hidden>
+      <p>{siteConfig.consent.message}</p>
+      <div class="consent__actions">
+        <button type="button" class="btn btn--ink" data-consent="granted">{siteConfig.consent.accept}</button>
+        <button type="button" class="btn btn--line" data-consent="denied">{siteConfig.consent.decline}</button>
+      </div>
+    </div>
+  )
+}
+
+{
+  part === "footer" && (
+    <footer class="footer" data-hide-sticky>
+      <div class="container footer__inner">
+        <p class="footer__brand">{page.footer.brand}</p>
+        <p class="footer__course">{page.footer.course}</p>
+        <p class="footer__note">{page.footer.note}</p>
+      </div>
+    </footer>
+  )
+}

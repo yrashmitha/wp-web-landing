@@ -1,0 +1,54 @@
+---
+import type { LoadedContent } from "../../content/content-loader";
+import { variantIds } from "../../content/landing-page.schema";
+import Cta from "../ui/Cta.astro";
+import Icon from "../ui/Icon.astro";
+import Section from "../ui/Section.astro";
+
+interface Props {
+  index: number;
+  content: LoadedContent;
+}
+const { index, content } = Astro.props;
+const { shared, personalization, settings } = content.page;
+const copy = content.hero;
+const labels = { neutral: copy.neutral.ctaLabel, extra_income: copy.extra_income.ctaLabel, business_growth: copy.business_growth.ctaLabel };
+---
+
+<Section id="hero" index={index} class="hero">
+  <div class="hero__grid">
+    <div class="hero__main">
+    <h1 id="hero-title" class="hero__title display">
+      {variantIds.map((v) => <span data-seg-variant={v}>{copy[v].headline}</span>)}
+    </h1>
+
+      <p class="lead">
+        {variantIds.map((v) => <span data-seg-variant={v}>{copy[v].subheadline}</span>)}
+      </p>
+      <div class="hero__actions">
+        <Cta id={content.ctaIds.hero} location="hero" label={labels} />
+        <p class="note">{shared.hero.microcopy}</p>
+      </div>
+    </div>
+
+    {
+      settings.enablePersonalization && (
+        <div class="goal" role="group" aria-labelledby="goal-question">
+          <p class="goal__q" id="goal-question">
+            <span data-seg-variant="neutral">{personalization.question}</span>
+            <span data-seg-variant="extra_income">{personalization.changeLabel}</span>
+            <span data-seg-variant="business_growth">{personalization.changeLabel}</span>
+          </p>
+          <div class="goal__options">
+            {personalization.options.map((o) => (
+              <button type="button" class="goal__opt" data-seg-choose={o.id} aria-pressed="false">
+                <span class="chip"><Icon name={o.icon} /></span>
+                <span>{o.label}</span>
+              </button>
+            ))}
+          </div>
+        </div>
+      )
+    }
+  </div>
+</Section>

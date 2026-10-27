@@ -1,0 +1,40 @@
+---
+import type { LoadedContent } from "../../content/content-loader";
+import { variantIds } from "../../content/landing-page.schema";
+import Section from "../ui/Section.astro";
+
+interface Props {
+  index: number;
+  content: LoadedContent;
+}
+const { index, content } = Astro.props;
+const { shared, segments } = content.page;
+const opp = { neutral: shared.opportunity, extra_income: segments.extra_income.opportunity, business_growth: segments.business_growth.opportunity };
+---
+
+<Section id="opportunity" index={index} tone="tint">
+  <div class="opp">
+    <h2 id="opportunity-title" class="head opp__head">
+      {variantIds.map((v) => <span data-seg-variant={v}>{opp[v].headline}</span>)}
+    </h2>
+    <p class="opp__intro">
+      {variantIds.map((v) => <span data-seg-variant={v}>{opp[v].intro}</span>)}
+    </p>
+    {
+      variantIds.map((v) => (
+        <ol class="benefits" data-seg-variant={v}>
+          {opp[v].benefits.map((b, i) => (
+            <li>
+              <span class="benefits__n">{String(i + 1).padStart(2, "0")}</span>
+              <h3>{b.title}</h3>
+              <p>{b.description}</p>
+            </li>
+          ))}
+        </ol>
+      ))
+    }
+    <p class="statement opp__closing">
+      {variantIds.map((v) => <span data-seg-variant={v}>{opp[v].closing}</span>)}
+    </p>
+  </div>
+</Section>

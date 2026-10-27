@@ -1,0 +1,532 @@
+
+{
+  "site": {
+    "brand": "100 Web Designers Mission",
+    "courseName": "AI + WordPress Web Designing & Freelancing",
+    "language": "si-LK",
+    "courseType": "paid",
+    "status": "interest_collection",
+    "seo": {
+      "title": "AI + WordPress Web Designing Course Sinhala | 100 Web Designers Mission",
+      "description": "AI, WordPress සහ Freelancing මුල සිට ඉගෙනගන්න සැලසුම් කරන Paid Practical Training Program එක. Course විස්තර ලබාගැනීමට WhatsApp Group එකට එකතු වෙන්න.",
+      "ogImage": "/images/og-cover.webp"
+    }
+  },
+  "settings": {
+    "showTwoHourClaim": false,
+    "showCoursePrice": false,
+    "showStartDate": false,
+    "showMobileStickyCTA": true,
+    "enableInteractiveDemo": true,
+    "enableIncomeCalculator": true
+  },
+  "announcement": {
+    "type": "paid",
+    "label": "Upcoming Paid Practical Training",
+    "message": "සම්පූර්ණ Course Content, ගාස්තු, ආරම්භක දිනය සහ Registration විස්තර WhatsApp Group එකේදී දැනුම් දෙනවා.",
+    "price": null,
+    "startDate": null
+  },
+  "ctas": {
+    "hero": {
+      "id": "hero_whatsapp",
+      "label": "මටත් මේක ඉගෙනගන්න ඕනේ",
+      "subtext": "Paid Course එකේ විස්තර WhatsApp Group එකෙන් ලබාගන්න.",
+      "action": "join_whatsapp"
+    },
+    "afterDemo": {
+      "id": "demo_whatsapp",
+      "label": "මටත් මේ වගේ Websites හදන්න ඕනේ",
+      "action": "join_whatsapp"
+    },
+    "afterLearning": {
+      "id": "learning_whatsapp",
+      "label": "Course විස්තර ලබාගන්න",
+      "action": "join_whatsapp"
+    },
+    "instructor": {
+      "id": "instructor_whatsapp",
+      "label": "වැඩසටහන ගැන වැඩි විස්තර",
+      "action": "join_whatsapp"
+    },
+    "mobileSticky": {
+      "id": "mobile_sticky_whatsapp",
+      "label": "WhatsApp Group එකට Join වෙන්න",
+      "action": "join_whatsapp"
+    },
+    "final": {
+      "id": "final_whatsapp",
+      "label": "WhatsApp Group එකට එකතු වෙන්න",
+      "action": "join_whatsapp"
+    }
+  },
+  "sections": [
+    {
+      "id": "hero",
+      "type": "hero",
+      "enabled": true,
+      "eyebrow": "AI + WORDPRESS + FREELANCING",
+      "headline": "මේ Website එක හදන්න මට පැය 2ක්වත් ගියේ නෑ කිව්වොත් විශ්වාස කරනවද?",
+      "alternativeHeadline": "AI එක්ක Website හදන විදිහ කොච්චර වෙනස් වෙලාද කියලා බලන්න.",
+      "subheadline": "ඔයාගේ Laptop එකත් ආදායමක් උපයන්න පුළුවන් Skill එකක් ගොඩනගන තැනක් කරගමුද?",
+      "description": "AI, WordPress සහ Web Designing මුල සිට සිංහලෙන් ඉගෙනගෙන, Professional Websites හදන්න සහ Freelancing පටන්ගන්න අවශ්‍ය Practical Skills ගොඩනගාගන්න.",
+      "readingPrompt": {
+        "title": "ඔයාගේ අනාගතය වෙනුවෙන් විනාඩි 5ක් වෙන් කරන්න.",
+        "description": "මේ Page එක සම්පූර්ණයෙන් බලන්න. Web Designing Skill එකකින් ඔයාට කරන්න පුළුවන් දේවල් ගැන අලුත් අදහසක් ලැබෙයි."
+      },
+      "highlights": [
+        "මුල සිට සිංහලෙන්",
+        "Coding දැනුමක් අවශ්‍ය නැහැ",
+        "AI + WordPress",
+        "Practical Freelancing Guidance"
+      ],
+      "courseDisclosure": "මෙය ඉදිරියේදී ආරම්භ කිරීමට සැලසුම් කරන Paid Training Program එකකි.",
+      "ctaRef": "hero"
+    },
+    {
+      "id": "two_hour_reveal",
+      "type": "buildStory",
+      "enabled": true,
+      "eyebrow": "THE POWER OF AI-ASSISTED WEB DESIGN",
+      "headline": "ඔයා දැන් බලන මේ Website එකම උදාහරණයක්.",
+      "intro": "කාලයක් Website එකක් හදන්න ලොකු Technical Knowledge එකක්, වැඩි කාලයක් සහ Tools ගොඩක් අවශ්‍ය වුණා.",
+      "description": "අද AI Tools සහ හොඳ Workflow එකක් තියෙන කෙනෙකුට Website එකක් සැලසුම් කරන එකේ සිට Build කරන එක දක්වා වැඩ ගොඩක් පහසු කරගන්න පුළුවන්.",
+      "importantNote": "AI කියන්නේ මැජික් එකක් නෙවෙයි. හොඳ Design Decisions, Testing සහ Client කෙනෙකුගේ අවශ්‍යතාව තේරුම්ගන්න Skill එක තවමත් වැදගත්.",
+      "process": [
+        {
+          "id": "idea",
+          "title": "01. Idea",
+          "description": "Client කෙනෙකුගේ ව්‍යාපාරික අවශ්‍යතාව තේරුම්ගන්න."
+        },
+        {
+          "id": "plan",
+          "title": "02. AI Planning",
+          "description": "AI භාවිතයෙන් Structure, Copy සහ Design Ideas සකස් කරන්න."
+        },
+        {
+          "id": "design",
+          "title": "03. Web Design",
+          "description": "Brand එකට ගැලපෙන Professional Layout එකක් නිර්මාණය කරන්න."
+        },
+        {
+          "id": "build",
+          "title": "04. Build",
+          "description": "අවශ්‍ය Tools භාවිතයෙන් Website එක ක්‍රියාත්මක කරන්න."
+        },
+        {
+          "id": "launch",
+          "title": "05. Launch",
+          "description": "Test කරලා Website එක Internet එකට Publish කරන්න."
+        }
+      ],
+      "closing": "වැදගත්ම දේ AI එකට Prompt එකක් දෙන එක විතරක් නෙවෙයි. ඒකෙන් සැබෑ ව්‍යාපාරික ප්‍රශ්නයකට විසඳුමක් හදන හැටි දැනගන්න එක."
+    },
+    {
+      "id": "website_demo",
+      "type": "websiteStudio",
+      "enabled": true,
+      "eyebrow": "TRY IT YOURSELF",
+      "headline": "ඔයාටත් මෙහෙම Websites හදන්න පුළුවන් නම්?",
+      "description": "පහළින් Business Type එකක් තෝරන්න. පාට සහ Layout එක වෙනස් කරලා, Website එකක් කොහොමද වෙනස් වෙන්නේ කියලා ඔයාම බලන්න.",
+      "instruction": "මුලින්ම Business Type එකක් තෝරන්න.",
+      "controls": {
+        "businessTypeLabel": "Business Type",
+        "colorLabel": "Brand Color",
+        "layoutLabel": "Layout Style",
+        "desktopLabel": "Desktop Preview",
+        "mobileLabel": "Mobile Preview"
+      },
+      "businessTypes": [
+        {
+          "id": "restaurant",
+          "label": "Restaurant",
+          "preview": {
+            "brand": "Ceylon Table",
+            "eyebrow": "FRESH FOOD, WARM MOMENTS",
+            "headline": "Made Fresh. Served With Love.",
+            "description": "Discover comforting flavors, fresh ingredients and a welcoming dining experience.",
+            "button": "Explore Our Menu",
+            "features": [
+              "Signature Dishes",
+              "Fresh Ingredients",
+              "Table Reservations"
+            ],
+            "image": "/images/demo-restaurant.webp"
+          }
+        },
+        {
+          "id": "salon",
+          "label": "Salon",
+          "preview": {
+            "brand": "Aura Beauty Studio",
+            "eyebrow": "BEAUTY AND SELF-CARE",
+            "headline": "Your Confidence, Beautifully Expressed.",
+            "description": "Thoughtful beauty services designed around your style and comfort.",
+            "button": "Explore Services",
+            "features": [
+              "Hair Styling",
+              "Beauty Treatments",
+              "Appointments"
+            ],
+            "image": "/images/demo-salon.webp"
+          }
+        },
+        {
+          "id": "fashion",
+          "label": "Fashion Store",
+          "preview": {
+            "brand": "Luma Fashion",
+            "eyebrow": "NEW COLLECTION",
+            "headline": "Everyday Style, Made Effortless.",
+            "description": "Explore modern essentials designed to fit your lifestyle.",
+            "button": "Shop Collection",
+            "features": [
+              "New Arrivals",
+              "Featured Products",
+              "Online Shopping"
+            ],
+            "image": "/images/demo-fashion.webp"
+          }
+        },
+        {
+          "id": "portfolio",
+          "label": "Portfolio",
+          "preview": {
+            "brand": "Creative Portfolio",
+            "eyebrow": "DESIGNER AND CREATOR",
+            "headline": "Turning Ideas Into Digital Experiences.",
+            "description": "Selected projects, creative thinking and modern digital solutions.",
+            "button": "View Projects",
+            "features": [
+              "Featured Work",
+              "About Me",
+              "Contact"
+            ],
+            "image": "/images/demo-portfolio.webp"
+          }
+        }
+      ],
+      "palettes": [
+        {
+          "id": "ocean",
+          "label": "Ocean Blue",
+          "color": "#2563EB"
+        },
+        {
+          "id": "forest",
+          "label": "Forest Green",
+          "color": "#167052"
+        },
+        {
+          "id": "terracotta",
+          "label": "Warm Terracotta",
+          "color": "#B8664B"
+        },
+        {
+          "id": "charcoal",
+          "label": "Charcoal",
+          "color": "#262626"
+        }
+      ],
+      "layouts": [
+        {
+          "id": "editorial",
+          "label": "Editorial"
+        },
+        {
+          "id": "centered",
+          "label": "Centered"
+        }
+      ],
+      "closing": "මේවා Websites හදන්න පුළුවන් ව්‍යාපාර වර්ග කිහිපයක් විතරයි. හොඳ Skill එකක් එක්ක තවත් විවිධ ව්‍යාපාර සඳහා Websites නිර්මාණය කරන්න පුළුවන්.",
+      "ctaRef": "afterDemo"
+    },
+    {
+      "id": "audience_problems",
+      "type": "audienceProblems",
+      "enabled": true,
+      "eyebrow": "SOUND FAMILIAR?",
+      "headline": "ඔයාටත් මේ දේවල් හිතෙනවද?",
+      "intro": "අලුත් Skill එකක් ඉගෙනගන්න ඕනේ කියලා හිතුණත්, පටන්ගන්න තැන හොයාගන්න එක තමයි සමහර වෙලාවට අමාරුම දේ.",
+      "problems": [
+        {
+          "id": "laptop",
+          "text": "Laptop එකක් තියෙනවා. ඒත් ඒකෙන් අමතර ආදායමක් හදාගන්නේ කොහොමද කියලා දන්නේ නෑ."
+        },
+        {
+          "id": "coding",
+          "text": "IT පැත්තට ආසයි. හැබැයි Coding දන්නේ නැති නිසා පටන්ගන්න බයයි."
+        },
+        {
+          "id": "job",
+          "text": "රස්සාවක් කරන ගමන් තවත් Skill එකක් ඉගෙනගෙන අලුත් අවස්ථා හොයාගන්න ඕනේ."
+        },
+        {
+          "id": "freelancing",
+          "text": "Freelancing පටන්ගන්න කැමතියි. ඒත් පළවෙනි Client හොයාගන්න විදිහ දන්නේ නෑ."
+        },
+        {
+          "id": "youtube",
+          "text": "YouTube Videos බැලුවට මුල ඉඳන් අගට යන පැහැදිලි Roadmap එකක් නැහැ."
+        }
+      ],
+      "closingHeadline": "එහෙනම් මේ වැඩසටහන සැලසුම් කරන්නේ ඔයා වගේ කෙනෙක්ට.",
+      "closingDescription": "Technical Background එකක් නැති කෙනෙකුට වුණත් මුල සිට ඉගෙනගන්න පුළුවන් විදිහට Practical Learning Path එකක් ගොඩනගන එකයි අපේ අදහස."
+    },
+    {
+      "id": "learning_path",
+      "type": "learningPath",
+      "enabled": true,
+      "eyebrow": "WHAT YOU WILL EXPLORE",
+      "headline": "Website එකක් හදන්න ඉගෙනගන්නවා විතරක් නෙවෙයි.",
+      "description": "Web Design Skill එකක් Freelance Service එකක් බවට පත්කරගන්න අවශ්‍ය මූලික දේවල් එක්ක Practical Learning Experience එකක් සැලසුම් කරනවා.",
+      "items": [
+        {
+          "id": "ai",
+          "title": "AI-Assisted Website Creation",
+          "description": "AI Tools භාවිතයෙන් Website Ideas, Content සහ Design Workflows පහසු කරගන්න."
+        },
+        {
+          "id": "wordpress",
+          "title": "WordPress Web Designing",
+          "description": "Coding දැනුමක් නැතුව මුල සිට WordPress Websites නිර්මාණය කරන්න."
+        },
+        {
+          "id": "design",
+          "title": "Professional Web Design",
+          "description": "Colors, Layouts, Typography සහ Mobile Responsive Design මූලික කරුණු තේරුම්ගන්න."
+        },
+        {
+          "id": "hosting",
+          "title": "Domain, Hosting and Launching",
+          "description": "Website එකක් Internet එකේ Live කරන හැටි සහ මූලික Maintenance Practices දැනගන්න."
+        },
+        {
+          "id": "clients",
+          "title": "Real Client Projects",
+          "description": "Client Requirement එකක් තේරුම්ගන්න, Project Scope එක හදන්න සහ Website එක Handover කරන ක්‍රම ඉගෙනගන්න."
+        },
+        {
+          "id": "freelancing",
+          "title": "Freelancing Fundamentals",
+          "description": "Portfolio එකක් ගොඩනගන්න, Clients හොයාගන්න සහ Website Projects වලට මිල නියම කරන හැටි ඉගෙනගන්න."
+        }
+      ],
+      "disclaimer": "මේවා සැලසුම් කරන ප්‍රධාන ඉගෙනුම් ක්ෂේත්‍රයි. සම්පූර්ණ Course Content සහ Program Structure එක WhatsApp Group එකේදී දැනුම් දෙනවා.",
+      "ctaRef": "afterLearning"
+    },
+    {
+      "id": "project_opportunities",
+      "type": "opportunityGallery",
+      "enabled": true,
+      "eyebrow": "WHAT CAN YOU BUILD?",
+      "headline": "ඔයා ඉගෙනගන්න Skill එකෙන් කාටද උදව් කරන්න පුළුවන්?",
+      "description": "අද විවිධ ව්‍යාපාර වලට තමන්ගේ Services, Products සහ Brand එක Online පෙන්වන්න Websites අවශ්‍ය වෙන්න පුළුවන්.",
+      "items": [
+        {
+          "id": "restaurant",
+          "title": "Restaurant Websites",
+          "description": "Menu, Business Information සහ Reservation Links එක තැනක පෙන්වන්න."
+        },
+        {
+          "id": "salon",
+          "title": "Salon and Beauty Websites",
+          "description": "Services, Packages, Portfolio සහ Booking Options පෙන්වන්න."
+        },
+        {
+          "id": "ecommerce",
+          "title": "Online Stores",
+          "description": "Products, Categories සහ Shopping Experiences Online ගොඩනගන්න."
+        },
+        {
+          "id": "business",
+          "title": "Business Websites",
+          "description": "Company Information, Services සහ Customer Enquiries ලබාගන්න."
+        },
+        {
+          "id": "portfolio",
+          "title": "Professional Portfolios",
+          "description": "Skills, Previous Work සහ Contact Details ආකර්ෂණීයව පෙන්වන්න."
+        },
+        {
+          "id": "landing",
+          "title": "Marketing Landing Pages",
+          "description": "Products, Services සහ Campaigns සඳහා Conversion-focused Pages හදන්න."
+        }
+      ],
+      "closing": "Skill එකක වටිනාකම තියෙන්නේ Tool එක දැනගන්න එකේ විතරක් නෙවෙයි. ඒකෙන් තවත් කෙනෙකුගේ අවශ්‍යතාවක් විසඳන එකේ."
+    },
+    {
+      "id": "income_calculator",
+      "type": "incomeCalculator",
+      "enabled": true,
+      "eyebrow": "THE FREELANCING OPPORTUNITY",
+      "headline": "Website හදන්න ඉගෙනගත්තට පස්සේ ආදායමක් හදාගන්නේ කොහොමද?",
+      "description": "Web Designing Skill එකක් තියෙන කෙනෙකුට Client Projects භාරගෙන Services ලබාදීමේ අවස්ථාව තිබෙනවා. මේ උදාහරණයෙන් ආදායම ගණනය වන හැටි බලන්න.",
+      "calculator": {
+        "currency": "LKR",
+        "projectPrice": {
+          "label": "Website Project එකක මිල",
+          "min": 10000,
+          "max": 150000,
+          "step": 5000,
+          "default": 50000
+        },
+        "projectsPerMonth": {
+          "label": "මාසයකදී අවසන් කරන Projects ගණන",
+          "min": 0,
+          "max": 5,
+          "step": 1,
+          "default": 2
+        },
+        "resultLabel": "උදාහරණ මාසික දළ ආදායම",
+        "disclaimer": "මෙය ගණනය කිරීමේ උදාහරණයක් පමණයි. මෙවැනි මිලකට Clients ලැබෙන බව හෝ නිශ්චිත ආදායමක් උපයාගත හැකි බවට සහතිකයක් නොවේ. Project Costs, Taxes සහ වෙනත් වියදම් මෙයට ඇතුළත් නැහැ."
+      },
+      "steps": [
+        {
+          "id": "learn",
+          "title": "Skill එක ඉගෙනගන්න"
+        },
+        {
+          "id": "portfolio",
+          "title": "Portfolio එකක් හදාගන්න"
+        },
+        {
+          "id": "clients",
+          "title": "Clients හොයාගන්න"
+        },
+        {
+          "id": "deliver",
+          "title": "Projects Deliver කරන්න"
+        },
+        {
+          "id": "earn",
+          "title": "Services වලින් ආදායමක් උපයන්න"
+        }
+      ],
+      "closing": "ආදායම තීරණය වෙන්නේ Skill, Portfolio, Client Acquisition, Quality සහ කැපවීම මතයි."
+    },
+    {
+      "id": "instructor",
+      "type": "instructor",
+      "enabled": true,
+      "eyebrow": "MEET YOUR INSTRUCTOR",
+      "headline": "YouTube Tutorial එකකට වඩා Real-world Experience එකක වටිනාකම වෙනස්.",
+      "name": "Yohan Rashmitha",
+      "role": "Software Engineer | Freelancer | Entrepreneur",
+      "experienceLabel": "10+ Years of Experience",
+      "freelancingSince": "2016",
+      "photo": null,
+      "bio": "මම 2016 ඉඳන් Freelancing කරන Software Engineer කෙනෙක්. ලංකාවේ සහ විදේශීය Clients එක්ක වැඩ කරලා ලබාගත්ත Practical Experience එක Beginner කෙනෙකුට තේරෙන විදිහට බෙදාගන්නයි මේ වැඩසටහන සැලසුම් කරන්නේ.",
+      "highlights": [
+        "10+ Years of Relevant Experience",
+        "Local Client Experience",
+        "International Client Experience",
+        "Practical Website Development"
+      ],
+      "closing": "මගේ අරමුණ Tools ටිකක් පෙන්වලා ඉවර කරන එක නෙවෙයි. සැබෑ Client Requirement එකක් තේරුම්ගෙන Professional Website එකක් නිර්මාණය කරන්න අවශ්‍ය මූලික Skill එක ගොඩනගන්න මඟ පෙන්වන එක.",
+      "ctaRef": "instructor"
+    },
+    {
+      "id": "mission",
+      "type": "mission",
+      "enabled": true,
+      "eyebrow": "THE 100 WEB DESIGNERS MISSION",
+      "headline": "මගේ ඊළඟ ඉලක්කය Web Designers 100ක් ගොඩනගන එක.",
+      "description": "Laptop එකක් තියෙන, අලුත් Skill එකක් ඉගෙනගන්න කැමති තවත් 100 දෙනෙකුට Web Designing සහ Freelancing පැත්තෙන් ඉදිරියට යන්න මඟ පෙන්වන එක තමයි මේ වැඩසටහනේ අරමුණ.",
+      "supportingText": "හැමෝටම එකම වේගයෙන් ඉගෙනගන්න බැහැ. හැබැයි නිවැරදි මඟපෙන්වීම, Practice සහ කැපවීම එක්ක තමන්ගේ Skill එක දියුණු කරගන්න පුළුවන්.",
+      "closing": "මේ ගමනේ මුල් කණ්ඩායම ගැන තොරතුරු ලබාගන්න ඔයාත් එකතු වෙන්න."
+    },
+    {
+      "id": "audience_qualification",
+      "type": "qualification",
+      "enabled": true,
+      "eyebrow": "IS THIS FOR YOU?",
+      "headline": "මේ වැඩසටහන ඔයාට ගැලපෙනවද?",
+      "forYou": [
+        "Web Designing මුල සිට ඉගෙනගන්න කැමති නම්",
+        "Laptop හෝ Desktop Computer එකක් භාවිත කරන්න පුළුවන් නම්",
+        "Practice කරන්න කාලයක් වෙන් කරන්න සූදානම් නම්",
+        "Freelancing ගැන Practical Knowledge එකක් ගන්න කැමති නම්",
+        "අමතර ආදායම් අවස්ථා ගොඩනගන්න Skill එකක් ඉගෙනගන්න කැමති නම්"
+      ],
+      "notForYou": [
+        "කිසිම වැඩක් නොකර ඉක්මනින් මුදල් උපයන්න බලාපොරොත්තු වෙනවා නම්",
+        "අනිවාර්ය ආදායමක් හෝ Clients ලබාදීමක් බලාපොරොත්තු වෙනවා නම්",
+        "ඉගෙනගත්ත දේවල් Practice කරන්න සූදානම් නැත්නම්"
+      ],
+      "closing": "Skill එකක් ඉගෙනගන්න එක තමයි පළවෙනි පියවර. ඒ Skill එකෙන් අවස්ථා හදාගැනීම ඔයාගේ ඊළඟ ගමන."
+    },
+    {
+      "id": "faq",
+      "type": "faq",
+      "enabled": true,
+      "eyebrow": "FREQUENTLY ASKED QUESTIONS",
+      "headline": "ඔයාට ඇතිවෙන්න පුළුවන් ප්‍රශ්න කිහිපයක්.",
+      "items": [
+        {
+          "id": "coding_required",
+          "question": "Coding දැනුමක් අවශ්‍යද?",
+          "answer": "නැහැ. මුලින්ම Coding දැනුමක් නැති Beginners සඳහා මේ වැඩසටහන සැලසුම් කරනවා. හැබැයි Web Design මූලික කරුණු ඉගෙනගන්න සහ Practice කරන්න අවශ්‍යයි."
+        },
+        {
+          "id": "laptop_required",
+          "question": "Laptop එකක් අවශ්‍යද?",
+          "answer": "Practical Website Development වැඩ සඳහා Laptop හෝ Desktop Computer එකක් තිබීම නිර්දේශ කරනවා."
+        },
+        {
+          "id": "course_free",
+          "question": "මේ Course එක නොමිලේද?",
+          "answer": "නැහැ. මෙය Paid Practical Training Program එකක්. Course Fee සහ Registration විස්තර WhatsApp Group එකේදී දැනුම් දෙනවා."
+        },
+        {
+          "id": "course_fee",
+          "question": "Course එකේ ගාස්තුව කීයද?",
+          "answer": "Course Fee එක තවම ප්‍රකාශයට පත් කරලා නැහැ. ගාස්තුව අවසන් කළ පසු WhatsApp Group එක හරහා දැනුම් දෙනවා."
+        },
+        {
+          "id": "course_content",
+          "question": "Course එකේ මොනවද උගන්වන්නේ?",
+          "answer": "AI-assisted Website Creation, WordPress Web Designing, Website Publishing සහ Freelancing Fundamentals ඇතුළත් කරලා වැඩසටහන සැලසුම් කරනවා. සම්පූර්ණ Course Content එක Group එකේදී දැනුම් දෙනවා."
+        },
+        {
+          "id": "beginners",
+          "question": "IT Background එකක් නැති කෙනෙකුට ඉගෙනගන්න පුළුවන්ද?",
+          "answer": "ඔව්. මේ වැඩසටහන මුල සිට ඉගෙනගන්න කැමති Beginners අරමුණු කරගෙන සැලසුම් කරනවා. පරිගණකය භාවිතා කිරීමේ මූලික දැනුම සහ Practice කිරීමේ කැමැත්ත ප්‍රයෝජනවත් වෙනවා."
+        },
+        {
+          "id": "earnings",
+          "question": "Course එකෙන් පස්සේ අනිවාර්යයෙන් ආදායමක් උපයන්න පුළුවන්ද?",
+          "answer": "ආදායමක් සහතික කරන්න බැහැ. ඒක ඉගෙනගත් Skill එක, Portfolio එක, Clients හොයාගන්න හැකියාව සහ කැපවීම මත රඳා පවතිනවා."
+        },
+        {
+          "id": "start_date",
+          "question": "Course එක පටන්ගන්නේ කවදාද?",
+          "answer": "ආරම්භක දිනය තවම ප්‍රකාශයට පත් කරලා නැහැ. ඒ පිළිබඳ updates WhatsApp Group එකෙන් ලබාගන්න පුළුවන්."
+        },
+        {
+          "id": "group_join",
+          "question": "WhatsApp Group එකට එකතු වුණාම Course එකට Register වෙනවද?",
+          "answer": "නැහැ. Group එකට එකතු වීමෙන් සිදුවෙන්නේ Paid Course එකේ ඉදිරි විස්තර ලබාගන්න එක පමණයි. Registration සහ Payment ගැන පසුව දැනුම් දෙනවා."
+        }
+      ]
+    },
+    {
+      "id": "final_cta",
+      "type": "finalCTA",
+      "enabled": true,
+      "eyebrow": "START WITH A DECISION",
+      "headline": "ඔයාගේ Laptop එකෙන් අලුත් දෙයක් පටන්ගන්න සූදානම්ද?",
+      "description": "AI, WordPress සහ Web Designing ඉගෙනගෙන Freelancing පැත්තට යන්න ඇත්තටම කැමති නම්, අපේ WhatsApp Interest Group එකට එකතු වෙන්න.",
+      "details": "Course Content, Fee, Starting Date සහ Registration Details ඉදිරියේදී WhatsApp Group එකෙන් දැනුම් දෙනවා.",
+      "disclaimer": "මෙය Paid Course එකක් පිළිබඳ තොරතුරු ලබාගැනීම සඳහා ඇති WhatsApp Group එකකි. Group එකට Join වීමෙන් Course Registration හෝ Payment එකක් සිදු නොවේ.",
+      "ctaRef": "final"
+    }
+  ],
+  "footer": {
+    "brand": "100 Web Designers Mission",
+    "tagline": "Learn to Build. Learn to Create. Explore Freelancing.",
+    "disclaimer": "මෙම වැඩසටහන ආදායම් සහතිකයක් හෝ රැකියා ලබාදීමේ සහතිකයක් නොවේ.",
+    "copyright": "All rights reserved."
+  }
+}

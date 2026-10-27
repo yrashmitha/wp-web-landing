@@ -1,0 +1,141 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-10-27T00:00:00Z",
+  "title": "Design System: 100 Web Designers Mission",
+  "extensions": {
+    "colorMeta": {
+      "signal-blue": { "role": "primary", "displayName": "Signal Blue", "canonical": "oklch(50% 0.21 262)", "tonalRamp": ["oklch(15% 0.21 262)", "oklch(25% 0.21 262)", "oklch(35% 0.21 262)", "oklch(50% 0.21 262)", "oklch(62% 0.18 262)", "oklch(74% 0.12 262)", "oklch(86% 0.07 262)", "oklch(95% 0.03 262)"] },
+      "signal-blue-deep": { "role": "primary", "displayName": "Signal Blue Deep", "canonical": "oklch(40% 0.19 265)", "tonalRamp": ["oklch(15% 0.19 265)", "oklch(25% 0.19 265)", "oklch(32% 0.19 265)", "oklch(40% 0.19 265)", "oklch(55% 0.16 265)", "oklch(70% 0.11 265)", "oklch(85% 0.06 265)", "oklch(95% 0.03 265)"] },
+      "disclosure-amber": { "role": "secondary", "displayName": "Disclosure Amber", "canonical": "oklch(93% 0.09 90)", "tonalRamp": ["oklch(25% 0.06 80)", "oklch(36% 0.08 70)", "oklch(50% 0.1 80)", "oklch(65% 0.12 85)", "oklch(78% 0.12 88)", "oklch(86% 0.1 90)", "oklch(93% 0.09 90)", "oklch(97% 0.04 92)"] },
+      "ink": { "role": "neutral", "displayName": "Ink", "canonical": "oklch(22% 0.045 265)", "tonalRamp": ["oklch(15% 0.045 265)", "oklch(22% 0.045 265)", "oklch(32% 0.04 265)", "oklch(42% 0.035 265)", "oklch(55% 0.03 265)", "oklch(70% 0.025 265)", "oklch(85% 0.02 260)", "oklch(95% 0.012 255)"] },
+      "page-white": { "role": "neutral", "displayName": "Page White", "canonical": "oklch(99% 0.004 250)", "tonalRamp": ["oklch(90% 0.016 255)", "oklch(93% 0.015 255)", "oklch(96.5% 0.014 255)", "oklch(97.5% 0.01 252)", "oklch(98.5% 0.006 250)", "oklch(99% 0.004 250)", "oklch(99.5% 0.003 250)", "oklch(100% 0 0)"] },
+      "tint-band": { "role": "neutral", "displayName": "Tint Band", "canonical": "oklch(96.5% 0.014 255)", "tonalRamp": ["oklch(80% 0.02 255)", "oklch(86% 0.018 255)", "oklch(90% 0.016 255)", "oklch(93% 0.015 255)", "oklch(95% 0.014 255)", "oklch(96.5% 0.014 255)", "oklch(98% 0.01 255)", "oklch(99% 0.004 250)"] },
+      "blue-tint": { "role": "neutral", "displayName": "Blue Tint", "canonical": "oklch(94% 0.04 262)", "tonalRamp": ["oklch(70% 0.1 262)", "oklch(78% 0.08 262)", "oklch(85% 0.06 262)", "oklch(90% 0.05 262)", "oklch(94% 0.04 262)", "oklch(96% 0.03 262)", "oklch(98% 0.015 262)", "oklch(99% 0.006 262)"] },
+      "night-navy": { "role": "neutral", "displayName": "Night Navy", "canonical": "oklch(20% 0.045 265)", "tonalRamp": ["oklch(12% 0.04 265)", "oklch(16% 0.045 265)", "oklch(20% 0.045 265)", "oklch(28% 0.045 265)", "oklch(38% 0.04 265)", "oklch(52% 0.035 265)", "oklch(70% 0.025 265)", "oklch(88% 0.015 265)"] }
+    },
+    "typographyMeta": {
+      "display": { "displayName": "Display", "purpose": "Final CTA heading and instructor name; hero h1 uses a smaller clamp." },
+      "headline": { "displayName": "Headline", "purpose": "Section h2, turn heading and stat figures." },
+      "title": { "displayName": "Title", "purpose": "Card h3, weight 650." },
+      "body": { "displayName": "Body", "purpose": "Paragraphs at leading 1.8 for Sinhala." },
+      "lead": { "displayName": "Lead", "purpose": "Section intro in muted ink, max 44ch." },
+      "label": { "displayName": "Label", "purpose": "Buttons, pills, nav links, summaries." }
+    },
+    "shadows": [
+      { "name": "card", "value": "0 1px 2px oklch(22% 0.045 265 / 0.06), 0 12px 32px -16px oklch(22% 0.045 265 / 0.18)", "purpose": "White cards on tint bands." },
+      { "name": "button-glow", "value": "0 10px 24px -12px oklch(50% 0.21 262 / 0.7)", "purpose": "Primary buttons." },
+      { "name": "consent-float", "value": "0 20px 50px -12px oklch(22% 0.045 265 / 0.35)", "purpose": "Consent card only." }
+    ],
+    "motion": [
+      { "name": "ease-out", "value": "cubic-bezier(0.16, 1, 0.3, 1)", "purpose": "All transitions and entrances." },
+      { "name": "dur-micro", "value": "120ms", "purpose": "Fast state feedback." },
+      { "name": "dur-short", "value": "220ms", "purpose": "Hover lifts, color shifts, FAQ toggle." },
+      { "name": "dur-long", "value": "600ms", "purpose": "Fade-up on scroll arrival and roadmap entrance." }
+    ],
+    "breakpoints": [
+      { "name": "narrow", "value": "22.5rem" },
+      { "name": "phone", "value": "30rem" },
+      { "name": "tablet", "value": "40rem" },
+      { "name": "split", "value": "60rem" }
+    ]
+  },
+  "components": [
+    {
+      "name": "Primary Button",
+      "kind": "button",
+      "refersTo": "button-primary",
+      "description": "The single WhatsApp CTA; inverts on blue bands.",
+      "html": "<a class=\"ds-btn\" href=\"#\">Join the WhatsApp group</a>",
+      "css": ".ds-btn { display: inline-flex; align-items: center; justify-content: center; min-height: 54px; padding: 0 24px; border-radius: var(--radius, 12px); background: var(--blue); color: var(--on-blue); font-family: var(--font-display); font-weight: 650; font-size: 1.0625rem; text-decoration: none; box-shadow: 0 10px 24px -12px oklch(50% 0.21 262 / 0.7); transition: background-color 220ms cubic-bezier(0.16,1,0.3,1), transform 220ms cubic-bezier(0.16,1,0.3,1); } .ds-btn:hover { background: var(--blue-deep); transform: translateY(-2px); } .ds-btn:active { transform: none; } .ds-btn:focus-visible { outline: 3px solid var(--blue); outline-offset: 3px; }"
+    },
+    {
+      "name": "Quiet Button",
+      "kind": "button",
+      "refersTo": "button-quiet",
+      "description": "Secondary action with a hairline ring.",
+      "html": "<button class=\"ds-btn-quiet\">Secondary</button>",
+      "css": ".ds-btn-quiet { min-height: 54px; padding: 0 24px; border: 0; border-radius: 12px; background: var(--bg); color: var(--ink); font-family: var(--font-display); font-weight: 650; font-size: 1.0625rem; box-shadow: inset 0 0 0 1.5px var(--line); cursor: pointer; transition: background-color 220ms; } .ds-btn-quiet:hover { background: var(--tint); box-shadow: inset 0 0 0 1.5px var(--blue); } .ds-btn-quiet:focus-visible { outline: 3px solid var(--blue); outline-offset: 3px; }"
+    },
+    {
+      "name": "Disclosure Pill",
+      "kind": "chip",
+      "refersTo": "pill-disclosure",
+      "description": "Amber pill that states the course is paid.",
+      "html": "<p class=\"ds-pill\">Upcoming Paid Practical Training</p>",
+      "css": ".ds-pill { display: inline-flex; align-items: center; min-height: 34px; padding: 0 16px; margin: 0; border-radius: 999px; background: var(--amber); color: var(--amber-ink); font-family: var(--font-display); font-weight: 650; font-size: 0.9375rem; }"
+    },
+    {
+      "name": "Content Card",
+      "kind": "card",
+      "refersTo": "card",
+      "description": "White 20px card with the single soft shadow, lifting on hover.",
+      "html": "<div class=\"ds-card\"><h3>Card title</h3><p>Supporting copy in muted ink.</p></div>",
+      "css": ".ds-card { display: grid; gap: 8px; padding: 24px; border-radius: 20px; background: var(--bg); box-shadow: 0 1px 2px oklch(22% 0.045 265 / 0.06), 0 12px 32px -16px oklch(22% 0.045 265 / 0.18); transition: transform 220ms cubic-bezier(0.16,1,0.3,1); } .ds-card:hover { transform: translateY(-4px); } .ds-card h3 { margin: 0; font-family: var(--font-display); font-size: 1.375rem; font-weight: 650; line-height: 1.45; } .ds-card p { margin: 0; color: var(--muted); }"
+    },
+    {
+      "name": "Feature Card",
+      "kind": "card",
+      "refersTo": "card-feature",
+      "description": "Solid blue card, one per grid, with a translucent icon chip.",
+      "html": "<div class=\"ds-feature\"><h3>Feature title</h3><p>Copy on blue.</p></div>",
+      "css": ".ds-feature { display: grid; gap: 8px; padding: 24px; border-radius: 20px; background: var(--blue); color: var(--on-blue); } .ds-feature h3 { margin: 0; font-family: var(--font-display); font-size: clamp(1.5rem, 1.15rem + 1.1vw, 2rem); font-weight: 650; color: var(--on-blue); } .ds-feature p { margin: 0; font-size: 1.1875rem; color: var(--on-blue); }"
+    },
+    {
+      "name": "Icon Chip",
+      "kind": "custom",
+      "refersTo": "icon-chip",
+      "description": "Lucide line icon in a Blue Tint circle.",
+      "html": "<span class=\"ds-chip\"><svg viewBox=\"0 0 24 24\" width=\"24\" height=\"24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.75\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M20 6 9 17l-5-5\"/></svg></span>",
+      "css": ".ds-chip { display: grid; place-items: center; width: 44px; height: 44px; border-radius: 50%; background: var(--blue-tint); color: var(--blue); }"
+    },
+    {
+      "name": "Navigation Bar",
+      "kind": "nav",
+      "refersTo": "nav-link",
+      "description": "Sticky white bar with hairline border and tint pill link.",
+      "html": "<nav class=\"ds-nav\"><span class=\"ds-nav-brand\">100 Web Designers Mission</span><a class=\"ds-nav-link\" href=\"#\">Join</a></nav>",
+      "css": ".ds-nav { display: flex; align-items: center; justify-content: space-between; min-height: 68px; padding: 0 20px; background: var(--bg); border-bottom: 1px solid var(--line); } .ds-nav-brand { font-family: var(--font-display); font-weight: 750; font-size: 1.0625rem; color: var(--ink); } .ds-nav-link { display: inline-flex; align-items: center; min-height: 44px; padding: 0 16px; border-radius: 12px; background: var(--tint); color: var(--ink); font-family: var(--font-display); font-weight: 650; font-size: 0.9375rem; text-decoration: none; transition: background-color 220ms; } .ds-nav-link:hover { background: var(--blue-tint); } .ds-nav-link:focus-visible { outline: 3px solid var(--blue); outline-offset: 3px; }"
+    },
+    {
+      "name": "FAQ Item",
+      "kind": "custom",
+      "refersTo": "faq-item",
+      "description": "Native details in a tint item that turns Blue Tint when open.",
+      "html": "<details class=\"ds-faq\"><summary>Is the course free?</summary><p>No. It is a paid course.</p></details>",
+      "css": ".ds-faq { border-radius: 12px; background: var(--tint); transition: background-color 220ms; } .ds-faq[open] { background: var(--blue-tint); } .ds-faq summary { min-height: 64px; display: flex; align-items: center; padding: 12px 24px; cursor: pointer; font-family: var(--font-display); font-weight: 650; font-size: 1.0625rem; line-height: 1.6; border-radius: 12px; } .ds-faq summary:focus-visible { outline: 3px solid var(--blue); outline-offset: -3px; } .ds-faq p { margin: 0; padding: 0 24px 24px; color: var(--muted); }"
+    }
+  ],
+  "narrative": {
+    "northStar": "The Clear Route",
+    "overview": "A calm, confident course page. A near-white ground, soft blue-grey bands, and exactly one saturated blue carry the whole page; rounded cards and generous Sinhala line height do the rest. The page shows the learner's route (idea to launch) immediately and earns trust through clarity, not decoration. This is the category standard played straight, executed with care: no texture, no themed motifs, no candy colour fields, no dark-mode drama above the footer.\n\nThe system is light, spacious and phone-first. Sections alternate between white and a faint blue-grey tint; two full-bleed blue bands (mission, final) are the only moments of saturation, plus the featured card and the occasional blue panel inside a section. Amber is reserved for honesty: it marks the \"paid course\" disclosure and nothing else.",
+    "keyCharacteristics": [
+      "White page, tint bands, one blue (signal-blue) used for actions, key cards and two bands.",
+      "Figtree with Noto Sans Sinhala fallback at normal width; weights 400 to 750; Sinhala-safe leading (1.8 body, 1.32 headings).",
+      "12px and 20px radii, one soft layered card shadow, Lucide line icons in blue-tint circles.",
+      "Night-navy footer closes the page."
+    ],
+    "rules": [
+      { "name": "The One Blue Rule", "body": "Saturation is spent on a single blue. Any new emphasis is a tint or a deep step of that blue, never a second hue.", "section": "colors" },
+      { "name": "The Honest Amber Rule", "body": "Amber appears only where the page tells the visitor the course is paid or states a limit. It is not decoration.", "section": "colors" },
+      { "name": "The Blue Band Rule", "body": "Full-bleed blue is limited to the mission and final sections; other blue surfaces are contained cards or panels.", "section": "colors" },
+      { "name": "The Sinhala Leading Rule", "body": "Body leading is 1.8 and heading leading 1.32 or more; never tighten headings below that, since Sinhala ascenders and marks collide.", "section": "typography" },
+      { "name": "The Lining Numerals Rule", "body": "Numbers use lining, tabular figures (steps, calculator, figures).", "section": "typography" },
+      { "name": "The One Soft Shadow Rule", "body": "Cards use the single Card shadow; no hard offset or tinted-neon shadows. Cards on blue use no shadow.", "section": "elevation" }
+    ],
+    "dos": [
+      "Do keep the page white with alternating Tint Band sections and spend saturation only on Signal Blue.",
+      "Do use 12px radius for controls and 20px for cards, with the single Card shadow.",
+      "Do set Sinhala with leading 1.8 body and at least 1.32 for headings, weight 400 to 750.",
+      "Do state paid status in Disclosure Amber wherever the CTA appears with expectations.",
+      "Do keep tap targets at least 44px and give every block below the fold a single fade-up (14px, 600ms) disabled under reduced motion.",
+      "Do put line icons in Blue Tint circles at one stroke weight."
+    ],
+    "donts": [
+      "Don't add a second accent hue; amber is for disclosure only.",
+      "Don't add texture, themed motifs, illustrations or dark sections other than the footer.",
+      "Don't use condensed, display-poster or system display faces.",
+      "Don't use gradient text, hard offset shadows or glyph or emoji icons.",
+      "Don't set headings below 1.32 line height or letter-space Sinhala."
+    ]
+  }
+}

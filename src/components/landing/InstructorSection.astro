@@ -1,0 +1,40 @@
+---
+import type { LoadedContent } from "../../content/content-loader";
+import Section from "../ui/Section.astro";
+
+interface Props {
+  index: number;
+  content: LoadedContent;
+}
+const { index, content } = Astro.props;
+const { instructor, mission } = content.page.shared;
+const photo = instructor.photo;
+const roles = instructor.role.split("|").map((r) => r.trim()).filter(Boolean);
+---
+
+<Section id="instructor" index={index} tone="plain">
+  <div class="who">
+    <div class="who__id">
+      <h2 id="instructor-title" class="head">{instructor.headline}</h2>
+      {photo && <img class="who__photo" src={photo.src} width={photo.width} height={photo.height} alt={photo.alt} loading="lazy" decoding="async" />}
+      <p class="who__since" aria-label={`${instructor.freelancingSince}, ${instructor.experienceBadge}`}>
+        <span class="who__year" aria-hidden="true">{instructor.freelancingSince}</span>
+        <span aria-hidden="true">{instructor.experienceBadge}</span>
+      </p>
+      <ul class="who__roles">
+        {roles.map((r) => <li>{r}</li>)}
+      </ul>
+    </div>
+    <div class="who__story">
+      <p class="lead">{instructor.description}</p>
+      <blockquote class="who__quote">
+        <p>{instructor.quote}</p>
+      </blockquote>
+    </div>
+  </div>
+
+  <div class="mission">
+    <h3 class="mission__head display-s">{mission.headline}</h3>
+    <p class="mission__text">{mission.description}</p>
+  </div>
+</Section>

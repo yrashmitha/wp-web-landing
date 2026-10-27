@@ -1,0 +1,291 @@
+{
+  "site": {
+    "brand": "100 Web Designers Mission",
+    "courseName": "AI + WordPress Web Designing & Freelancing",
+    "language": "si-LK",
+    "courseType": "paid",
+    "status": "coming_soon",
+    "seo": {
+      "title": "Laptop එකෙන් අලුත් අවස්ථාවක් | 100 Web Designers Mission",
+      "description": "අමතර ආදායම් අවස්ථා ගොඩනගන්න හෝ තමන්ගේම Business එක Online දියුණු කරගන්න AI + WordPress Web Designing ඉගෙනගන්න."
+    }
+  },
+  "settings": {
+    "enablePersonalization": true,
+    "showWebsiteDemo": false,
+    "showIncomeCalculator": false,
+    "showPortfolioGallery": false,
+    "showLongFAQ": false,
+    "showMobileStickyCTA": true,
+    "showCoursePrice": false
+  },
+  "personalization": {
+    "question": "ඔයාගේ ඊළඟ ඉලක්කය මොකක්ද?",
+    "options": [
+      {
+        "id": "extra_income",
+        "label": "අමතර ආදායමක් හදාගන්න",
+        "icon": "wallet"
+      },
+      {
+        "id": "business_growth",
+        "label": "මගේ Business එක Grow කරන්න",
+        "icon": "trending-up"
+      }
+    ],
+    "changeLabel": "වෙනත් ඉලක්කයක් තෝරන්න"
+  },
+  "navigation": {
+    "brandLabel": "AI + WordPress Web Designing & Freelancing",
+    "primaryCTA": "WhatsApp Group එකට එකතු වෙන්න"
+  },
+  "sections": [
+    {
+      "id": "hero",
+      "type": "adaptiveHero",
+      "enabled": true
+    },
+    {
+      "id": "recognition",
+      "type": "emotionalRecognition",
+      "enabled": true
+    },
+    {
+      "id": "beginner_confidence",
+      "type": "beginnerConfidence",
+      "enabled": true
+    },
+    {
+      "id": "opportunity",
+      "type": "opportunity",
+      "enabled": true
+    },
+    {
+      "id": "instructor",
+      "type": "instructor",
+      "enabled": true
+    },
+    {
+      "id": "final_cta",
+      "type": "conversion",
+      "enabled": true
+    }
+  ],
+  "shared": {
+    "hero": {
+      "eyebrow": "100 WEB DESIGNERS MISSION",
+      "headline": "ඔයාගේ Laptop එකෙන් අලුත් ගමනක් පටන්ගන්න සූදානම්ද?",
+      "subheadline": "අමතර ආදායමක් හදාගන්නද? නැත්නම් තමන්ගේම Business එක තවත් දියුණු කරගන්නද?",
+      "solution": "AI + WordPress Web Designing & Freelancing",
+      "supportingText": "ඔයාගේ ඉලක්කය මොකක් වුණත්, ඒකට ප්‍රයෝජනවත් Digital Skill එකක් ඉගෙනගන්න අදම පළවෙනි පියවර තියන්න.",
+      "microcopy": "ඉදිරියේදී ආරම්භ වන Paid Practical Training Program එකක්."
+    },
+    "recognition": {
+      "eyebrow": "A NEW POSSIBILITY",
+      "headline": "ඔයාටත් සමහර වෙලාවට මෙහෙම හිතෙනවද?",
+      "closing": "අනාගතය වෙනස් කරගන්න හැම වෙලාවෙම ලොකු තීරණයක් ගන්න ඕනේ නැහැ. සමහර වෙලාවට අලුත් Skill එකක් ඉගෙනගන්න තීරණය කරන එකම හොඳ ආරම්භයක්."
+    },
+    "beginnerConfidence": {
+      "eyebrow": "NO EXPERIENCE? YOU CAN START HERE.",
+      "headline": "හෝව්... හෝව්... 😅 Website හදන්න? මම ඕවා දන්නේ නෑනේ!",
+      "supportingText": "ඔයාටත් එහෙම හිතුණද? ඒක තමයි අපි මේ වැඩසටහන මුල ඉඳන් සැලසුම් කරන්නේ.",
+      "coreMessage": "මේ වැඩේ පටන්ගන්න Coding දැනුමක්වත්, කලින් Website හදලා තියෙන්නවත් අවශ්‍ය නැහැ.",
+      "requirementsLabel": "ඔයාට අවශ්‍ය වෙන්නේ",
+      "requirements": [
+        {
+          "id": "willingness",
+          "text": "අලුත් දෙයක් ඉගෙනගන්න සැබෑ උවමනාව."
+        },
+        {
+          "id": "practice_time",
+          "text": "දවසකට පැයක් විතර Practice කරන්න වෙන් කිරීමේ හැකියාව."
+        }
+      ],
+      "goalLabel": "අපේ ඉලක්කය",
+      "progress": "අද Website හදන්න නොදන්න කෙනෙකුටත්, මාසයක් තුළ මූලික Website එකක් තනියම හදාගන්න අවශ්‍ය පදනම ගොඩනගාගන්න මඟ පෙන්වීමයි අපේ ඉලක්කය.",
+      "community": {
+        "headline": "Course එක ඉවර වුණා කියලා අපි ඔයාව අතහරින්නේ නැහැ.",
+        "supportingText": "අපි හදන්නේ Videos ටිකක් බලලා ඉවර කරන Course එකක් විතරක් නෙවෙයි. එකිනෙකාට උදව් කරමින් ඉගෙනගන්න Web Designers Community එකක්.",
+        "benefits": [
+          {
+            "id": "ask_questions",
+            "icon": "messages-square",
+            "text": "ඉගෙනගන්නකොට ප්‍රශ්නයක් ආවොත් Group එකේ අහන්න පුළුවන්."
+          },
+          {
+            "id": "instructor_present",
+            "icon": "graduation-cap",
+            "text": "Instructor විදිහට මමත් Group එකේ ඉන්නවා."
+          },
+          {
+            "id": "learn_together",
+            "icon": "users",
+            "text": "ඔයා වගේම ඉගෙනගන්න තවත් අය එක්ක අදහස් බෙදාගන්න පුළුවන්."
+          },
+          {
+            "id": "keep_growing",
+            "icon": "sprout",
+            "text": "ඉගෙනගත්තට පස්සෙත් Skill එක දියුණු කරගන්න Community එක හරහා සහයෝගය ලබාගන්න පුළුවන්."
+          }
+        ],
+        "closing": "අපේ ඉලක්කය Course එකක් විකුණන එක විතරක් නෙවෙයි. එකට ඉගෙනගෙන ඉදිරියට යන Community එකක් ගොඩනගන එක.",
+        "accessNote": null
+      },
+      "verification": {
+        "courseFormatConfirmed": false,
+        "communitySupportConfirmed": false
+      }
+    },
+    "opportunity": {
+      "eyebrow": "YOUR NEXT SKILL",
+      "headline": "අද ඉගෙනගන්න Skill එකක්, හෙට ඔයාට අලුත් අවස්ථා විවර කරන්න පුළුවන්.",
+      "intro": "අද AI Tools සහ WordPress වගේ Technologies එක්ක Professional Websites හදන හැටි ඉගෙනගන්න එක කලින්ට වඩා පහසු වෙලා තියෙනවා.",
+      "benefits": [
+        {
+          "id": "beginner",
+          "title": "මුල සිට පටන්ගන්න",
+          "description": "Coding දැනුමක් නැති කෙනෙකුටත් Web Designing ඉගෙනගන්න පටන්ගන්න පුළුවන්."
+        },
+        {
+          "id": "practical",
+          "title": "Practical Skill එකක්",
+          "description": "ඉගෙනගන්න දේ තමන්ගේම Projects වලටත්, අනාගත Client Projects වලටත් යොදාගන්න."
+        },
+        {
+          "id": "flexibility",
+          "title": "ඔයාට ගැලපෙන ගමනක්",
+          "description": "දැනට කරන වැඩ අතරේ තමන්ට පහසු වෙලාවක Practice කරමින් Skill එක ගොඩනගාගන්න."
+        }
+      ],
+      "closing": "AI කියන්නේ තවත් අලුත් Technology එකක් විතරක් නෙවෙයි. ඒක නිවැරදිව භාවිත කරන්න ඉගෙනගන්න කෙනෙකුට තමන්ගේ Ideas සහ Projects ක්‍රියාත්මක කරගන්න ප්‍රයෝජනවත් Tool එකක්."
+    },
+    "instructor": {
+      "eyebrow": "LEARN FROM EXPERIENCE",
+      "headline": "මේ ගමනේදී ඔයාට මඟ පෙන්වන්නේ කවුද?",
+      "name": "Yohan Rashmitha",
+      "role": "Software Engineer | Freelancer | Entrepreneur",
+      "experienceBadge": "10+ Years of Experience",
+      "freelancingSince": "2016",
+      "description": "2016 ඉඳන් Freelancing කරමින් ලංකාවේ සහ විදේශීය Clients සමඟ වැඩ කරලා ලබාගත්ත Practical Experience එක, අලුතින් පටන්ගන්න කෙනෙකුටත් තේරෙන විදිහට බෙදාගන්නයි මේ වැඩසටහන සැලසුම් කරන්නේ.",
+      "quote": "මගේ අරමුණ ඔයාට Tool එකක් පාවිච්චි කරන්න කියලා දෙන එක විතරක් නෙවෙයි. ඒ Tool එකෙන් ඔයාටම වටිනා දෙයක් නිර්මාණය කරන්න මඟ පෙන්වන එක.",
+      "photo": null
+    },
+    "mission": {
+      "eyebrow": "MY NEXT MISSION",
+      "headline": "මගේ ඊළඟ ඉලක්කය Web Designers 100ක් ගොඩනගන එක.",
+      "description": "අලුත් දෙයක් ඉගෙනගන්න ආසාව තියෙන තවත් 100 දෙනෙකුට, Web Designing හරහා තමන්ගේම අවස්ථා ගොඩනගාගන්න මඟ පෙන්වන එකයි මගේ බලාපොරොත්තුව."
+    },
+    "finalCTA": {
+      "eyebrow": "TAKE YOUR FIRST STEP",
+      "headline": "තවත් කාලයක් හිත හිත ඉන්නවට වඩා, අදම පළවෙනි පියවර තියමුද?",
+      "description": "AI + WordPress Web Designing & Freelancing ඉගෙනගන්න කැමති අය වෙනුවෙන් අපි WhatsApp Group එකක් ආරම්භ කරනවා.",
+      "value": [
+        "අලුත් Course එකේ සම්පූර්ණ විස්තර",
+        "ඉගෙනගන්න දේවල් සහ වැඩසටහනේ සැලැස්ම",
+        "Course Fee සහ Registration Updates"
+      ],
+      "cta": {
+        "id": "final_whatsapp",
+        "label": "මටත් එකතු වෙන්න ඕනේ",
+        "action": "join_whatsapp"
+      },
+      "microcopy": "Paid Course එක පිළිබඳ updates ලබාගැනීමටයි. Group එකට එකතු වීමට ගෙවීමක් අවශ්‍ය නැහැ."
+    }
+  },
+  "segments": {
+    "extra_income": {
+      "hero": {
+        "headline": "Laptop එකක් තියෙනවද? ඒකෙන් අමතර ආදායමක් හදාගන්න Skill එකක් ඉගෙනගමුද?",
+        "subheadline": "දැනට කරන වැඩත් කරගෙන, ඔයාටම කියලා තවත් ආදායම් අවස්ථාවක් ගොඩනගන්න කැමතිද?",
+        "description": "AI + WordPress Web Designing ඉගෙනගෙන, Professional Websites නිර්මාණය කරන්න සහ Freelancing අවස්ථා හොයාගන්න අවශ්‍ය Skills ගොඩනගාගන්න.",
+        "ctaLabel": "මටත් මේ Skill එක ඉගෙනගන්න ඕනේ"
+      },
+      "recognition": {
+        "headline": "ඔයාටත් කවදාහරි මෙහෙම හිතිලා තියෙනවද?",
+        "statements": [
+          "මාසෙට ලැබෙන පඩියට අමතරව තවත් Income එකක් තිබුණා නම් කොච්චර හොඳද?",
+          "රස්සාවෙන් පස්සේ හෝ Weekend එකේ ටිකක් වෙලාව වෙන් කරලා මගේම දෙයක් පටන්ගන්න පුළුවන් නම්?",
+          "Laptop එකක් තියෙනවා. ඒකෙන් ආදායමක් උපයන්න පුළුවන් Skill එකක් ඉගෙනගන්න ඕනේ.",
+          "අද ඉඳන් අලුත් දෙයක් ඉගෙනගත්තොත්, තව අවුරුද්දකින් මට මොන තරම් වෙනස් අවස්ථා තියෙයිද?"
+        ],
+        "closing": "ඔයාගේ අනාගතය වෙනුවෙන් අලුත් Skill එකක් ගොඩනගන එක, ඔයාටම කරන්න පුළුවන් වටිනා ආයෝජනයක්."
+      },
+      "opportunity": {
+        "headline": "ඔයාගේ Laptop එකෙන් කරන්න පුළුවන් දේවල් තවත් තියෙනවා.",
+        "intro": "Professional Website එකක් හදන්න ඉගෙනගත්තාම, ඒ Skill එකෙන් තවත් කෙනෙකුගේ Business එකකට වටිනා Service එකක් ලබාදෙන්න අවස්ථාව තියෙනවා.",
+        "benefits": [
+          {
+            "id": "websites",
+            "title": "Websites නිර්මාණය කරන්න",
+            "description": "ව්‍යාපාර සහ පුද්ගලයන් වෙනුවෙන් Professional Websites හදන්න ඉගෙනගන්න."
+          },
+          {
+            "id": "clients",
+            "title": "Freelancing අවස්ථා හොයාගන්න",
+            "description": "ඔයාගේම Portfolio එකක් ගොඩනගාගෙන Client Projects ලබාගැනීමේ මූලික ක්‍රම දැනගන්න."
+          },
+          {
+            "id": "independent",
+            "title": "තමන්ගේම Skill එකක් ගොඩනගන්න",
+            "description": "ඔයාගේ දැනුම සහ හැකියාව මත අනාගත අවස්ථා ගොඩනගාගන්න."
+          }
+        ],
+        "closing": "ඔයාගේ Laptop එක අද තියෙන තැනම තිබුණත්, ඒක පාවිච්චි කරන ඔයාගේ හැකියාව වෙනස් කරන්න පුළුවන්."
+      },
+      "finalCTA": {
+        "headline": "ඔයාගේ අනාගතය වෙනුවෙන් අද පළවෙනි පියවර තියමුද?",
+        "description": "Web Designing සහ Freelancing ඉගෙනගන්න කැමති නම් අපේ WhatsApp Group එකට එකතු වෙලා Paid Course එකේ ඉදිරි විස්තර ලබාගන්න."
+      }
+    },
+    "business_growth": {
+      "hero": {
+        "headline": "ඔයාගේ Business එක තවත් ලොකු තැනකට ගෙනියන්න කැමතිද?",
+        "subheadline": "Facebook Page එකෙන් එහාට ගිහින්, ඔයාගේම Professional Online Presence එකක් ගොඩනගමුද?",
+        "description": "AI + WordPress Web Designing ඉගෙනගෙන, තමන්ගේම Website එකක් හදන්න සහ Business එකේ Online Marketing වැඩ තවත් හොඳින් තේරුම්ගන්න.",
+        "ctaLabel": "මගේ Business එකට මේක ඉගෙනගන්න ඕනේ"
+      },
+      "recognition": {
+        "headline": "Business එක කරන අතරේ ඔයාටත් මේ දේවල් හිතිලා තියෙනවද?",
+        "statements": [
+          "මගේ Business එකට Professional Website එකක් තිබුණා නම් Customersලාට තවත් හොඳ Experience එකක් දෙන්න තිබුණා.",
+          "Products සහ Services ඔක්කොම එකම Website එකක ලස්සනට පෙන්නන්න පුළුවන් නම්?",
+          "Ads වලට සල්ලි වියදම් කරනකොට එන Visitorsලා ගැන තවත් හොඳින් දැනගන්න පුළුවන් නම්?",
+          "හැම පොඩි Website වැඩකටම වෙන කෙනෙක් මත රඳා නොපවතින විදිහක් තිබුණා නම්?",
+          "Business එක Grow කරන්න අලුත් Digital Skills ඉගෙනගන්න ඕනේ කියලා මට හිතිලා තියෙනවා."
+        ],
+        "closing": "Business එකක වටිනාකම Products වල විතරක් නෙවෙයි. Customersලාට ඒ Business එක Online පෙනෙන විදිහත් වැදගත්."
+      },
+      "opportunity": {
+        "headline": "ඔයාගේ Business එකේ Online පැත්ත තවත් ශක්තිමත් කරගන්න.",
+        "intro": "Web Designing ඉගෙනගන්න එක ඔයාගේම Business එකේ Digital Presence එක හදාගන්නත්, Online Customersලාට වඩා හොඳ අත්දැකීමක් ලබාදෙන්නත් ප්‍රයෝජනවත් වෙන්න පුළුවන්.",
+        "benefits": [
+          {
+            "id": "own_website",
+            "title": "ඔයාගේම Website එක",
+            "description": "Products, Services සහ Business Details පෙන්වන Professional Website එකක් නිර්මාණය කරන්න."
+          },
+          {
+            "id": "marketing",
+            "title": "Marketing වලට Landing Pages",
+            "description": "විශේෂ Offers, Products සහ Campaigns වෙනුවෙන් Online Pages නිර්මාණය කරන හැටි ඉගෙනගන්න."
+          },
+          {
+            "id": "analytics",
+            "title": "Customersලා ගැන තවත් දැනගන්න",
+            "description": "Website Analytics සහ Meta Pixel වගේ Tools වලින් Visitor Actions මනින ආකාරය පිළිබඳ මූලික අවබෝධයක් ගොඩනගාගන්න."
+          }
+        ],
+        "closing": "තමන්ගේ Business එක ගැන වගේම ඒක Online දියුණු කරන Tools ගැනත් දැනගෙන ඉන්න එක වටිනා හැකියාවක්."
+      },
+      "finalCTA": {
+        "headline": "ඔයාගේ Business එකේ ඊළඟ පියවර වෙනුවෙන් අලුත් Skill එකක් ඉගෙනගමුද?",
+        "description": "ඔයාගේම Business Website එකක් හදන්න සහ Digital Skills දියුණු කරගන්න කැමති නම් WhatsApp Group එකට එකතු වෙලා Paid Course එකේ ඉදිරි විස්තර ලබාගන්න."
+      }
+    }
+  },
+  "footer": {
+    "brand": "100 Web Designers Mission",
+    "course": "AI + WordPress Web Designing & Freelancing",
+    "note": "ආදායම් හෝ ව්‍යාපාරික ප්‍රතිඵල සහතික නොවේ."
+  }
+}

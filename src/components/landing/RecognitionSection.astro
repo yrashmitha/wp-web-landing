@@ -1,0 +1,40 @@
+---
+import type { LoadedContent } from "../../content/content-loader";
+import { segmentIds, variantIds } from "../../content/landing-page.schema";
+import Icon from "../ui/Icon.astro";
+import Section from "../ui/Section.astro";
+
+interface Props {
+  index: number;
+  content: LoadedContent;
+}
+const { index, content } = Astro.props;
+const { shared, segments } = content.page;
+const headline = { neutral: shared.recognition.headline, extra_income: segments.extra_income.recognition.headline, business_growth: segments.business_growth.recognition.headline };
+const closing = { neutral: shared.recognition.closing, extra_income: segments.extra_income.recognition.closing, business_growth: segments.business_growth.recognition.closing };
+---
+
+<Section id="recognition" index={index} tone="tint">
+  <div class="rec">
+    <h2 id="recognition-title" class="head">
+      {variantIds.map((v) => <span data-seg-variant={v}>{headline[v]}</span>)}
+    </h2>
+    <div class="rec__body">
+      {
+        segmentIds.map((id) => (
+          <ol class="rows" data-seg-variant={id}>
+            {segments[id].recognition.statements.map((s) => (
+              <li>
+                <span class="chip"><Icon name="check" /></span>
+                <p>{s}</p>
+              </li>
+            ))}
+          </ol>
+        ))
+      }
+      <p class="statement">
+        {variantIds.map((v) => <span data-seg-variant={v}>{closing[v]}</span>)}
+      </p>
+    </div>
+  </div>
+</Section>

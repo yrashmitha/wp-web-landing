@@ -1,0 +1,47 @@
+---
+import type { LoadedContent } from "../../content/content-loader";
+import { variantIds } from "../../content/landing-page.schema";
+import Cta from "../ui/Cta.astro";
+import Icon from "../ui/Icon.astro";
+import Section from "../ui/Section.astro";
+
+interface Props {
+  index: number;
+  content: LoadedContent;
+}
+const { index, content } = Astro.props;
+const { shared, segments } = content.page;
+const final = shared.finalCTA;
+const text = {
+  neutral: { headline: final.headline, description: final.description },
+  extra_income: segments.extra_income.finalCTA,
+  business_growth: segments.business_growth.finalCTA,
+};
+---
+
+<Section id="final_cta" index={index} tone="brand" hideSticky>
+  <div class="final">
+    <div class="final__lead">
+      <h2 id="final_cta-title" class="display">
+        {variantIds.map((v) => <span data-seg-variant={v}>{text[v].headline}</span>)}
+      </h2>
+      <p class="lead">
+        {variantIds.map((v) => <span data-seg-variant={v}>{text[v].description}</span>)}
+      </p>
+    </div>
+    <div class="final__act">
+      <ul class="value">
+        {
+          final.value.map((v) => (
+            <li>
+              <Icon name="check" />
+              <span>{v}</span>
+            </li>
+          ))
+        }
+      </ul>
+      <Cta id={final.cta.id} location="final" label={final.cta.label} />
+      <p class="final__note">{final.microcopy}</p>
+    </div>
+  </div>
+</Section>
