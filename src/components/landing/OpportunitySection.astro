@@ -12,7 +12,7 @@ const { shared, segments } = content.page;
 const opp = { neutral: shared.opportunity, extra_income: segments.extra_income.opportunity, business_growth: segments.business_growth.opportunity };
 ---
 
-<Section id="opportunity" index={index} tone="tint">
+<Section id="opportunity" index={index} tone="plain">
   <div class="opp">
     <h2 id="opportunity-title" class="head opp__head">
       {variantIds.map((v) => <span data-seg-variant={v}>{opp[v].headline}</span>)}

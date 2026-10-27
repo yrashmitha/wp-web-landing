@@ -51,13 +51,13 @@
       "enabled": true
     },
     {
-      "id": "beginner_confidence",
-      "type": "beginnerConfidence",
+      "id": "opportunity",
+      "type": "opportunity",
       "enabled": true
     },
     {
-      "id": "opportunity",
-      "type": "opportunity",
+      "id": "beginner_confidence",
+      "type": "beginnerConfidence",
       "enabled": true
     },
     {
