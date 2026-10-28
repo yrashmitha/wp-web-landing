@@ -1,0 +1,30 @@
+---
+import type { CourseContent } from "../../content/course-content.schema";
+import Section from "../ui/Section.astro";
+
+interface Props {
+  index: number;
+  course: CourseContent;
+}
+const { index, course } = Astro.props;
+const { page } = course;
+---
+
+<Section id="course_intro" index={index} tone="night" stickyAfter class="hero cc-intro">
+  <div class="cc-intro__grid">
+    <div class="cc-intro__main">
+      <p class="hero__kicker">{page.eyebrow}</p>
+      <h1 id="course_intro-title" class="hero__title">{page.headline}</h1>
+      <p class="hero__sub">{page.description}</p>
+      <p class="cc-intro__course">{page.title}</p>
+    </div>
+
+    <div class="cc-intro__side">
+      <p class="cc-intro__days">{page.duration}</p>
+      <p class="cc-intro__practice">{page.practice}</p>
+      <ul class="cc-intro__chips">
+        {page.delivery.map((d) => <li>{d}</li>)}
+      </ul>
+    </div>
+  </div>
+</Section>

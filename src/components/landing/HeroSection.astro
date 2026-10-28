@@ -1,6 +1,6 @@
 ---
 import type { LoadedContent } from "../../content/content-loader";
-import { variantIds } from "../../content/landing-page.schema";
+import { segmentIds } from "../../content/landing-page.schema";
 import Cta from "../ui/Cta.astro";
 import Icon from "../ui/Icon.astro";
 import Section from "../ui/Section.astro";
@@ -10,42 +10,75 @@ interface Props {
   content: LoadedContent;
 }
 const { index, content } = Astro.props;
-const { shared, personalization, settings } = content.page;
-const copy = content.hero;
-const labels = { neutral: copy.neutral.ctaLabel, extra_income: copy.extra_income.ctaLabel, business_growth: copy.business_growth.ctaLabel };
+const { shared, segments, cta, personalization } = content.page;
+const teaser = shared.heroRewardTeaser;
+const [year, ...kicker] = shared.hero.eyebrow.split("|").map((part) => part.trim());
 ---
 
-<Section id="hero" index={index} class="hero">
+<Section id="hero" index={index} tone="night" class="hero">
   <div class="hero__grid">
     <div class="hero__main">
-    <h1 id="hero-title" class="hero__title display">
-      {variantIds.map((v) => <span data-seg-variant={v}>{copy[v].headline}</span>)}
-    </h1>
-
-      <p class="lead">
-        {variantIds.map((v) => <span data-seg-variant={v}>{copy[v].subheadline}</span>)}
+      <p class="hero__kicker">{kicker.join(" ") || year}</p>
+      <h1 id="hero-title" class="hero__title">
+        {segmentIds.map((id) => <span data-seg-variant={id}>{segments[id].hero.headline}</span>)}
+      </h1>
+      <p class="hero__sub">
+        {segmentIds.map((id) => <span data-seg-variant={id}>{segments[id].hero.subheadline}</span>)}
       </p>
+
       <div class="hero__actions">
-        <Cta id={content.ctaIds.hero} location="hero" label={labels} />
-        <p class="note">{shared.hero.microcopy}</p>
+        <Cta id={content.ctaIds.hero} location="hero" label={cta.label} />
       </div>
     </div>
 
+    <div class="hero__future">
+      {kicker.length > 0 && <p class="hero__year" aria-label={year}><span aria-hidden="true">{year}</span></p>}
+      <div class="hero__bridge">
+        <p class="hero__hook">
+          {segmentIds.map((id) => <span data-seg-variant={id}>{segments[id].hero.hook}</span>)}
+        </p>
+        <p class="hero__bridge-text">
+          {segmentIds.map((id) => <span data-seg-variant={id}>{segments[id].hero.bridge}</span>)}
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <div class="hero__foot">
     {
-      settings.enablePersonalization && (
+      personalization.enabled && (
         <div class="goal" role="group" aria-labelledby="goal-question">
-          <p class="goal__q" id="goal-question">
-            <span data-seg-variant="neutral">{personalization.question}</span>
-            <span data-seg-variant="extra_income">{personalization.changeLabel}</span>
-            <span data-seg-variant="business_growth">{personalization.changeLabel}</span>
-          </p>
+          <p class="goal__q" id="goal-question">{personalization.question}</p>
           <div class="goal__options">
             {personalization.options.map((o) => (
-              <button type="button" class="goal__opt" data-seg-choose={o.id} aria-pressed="false">
+              <button type="button" class="goal__opt" data-seg-choose={o.id} aria-pressed="false" aria-label={`${o.label}. ${personalization.changeLabel}`}>
                 <span class="chip"><Icon name={o.icon} /></span>
                 <span>{o.label}</span>
               </button>
             ))}
+          </div>
+          <div class="mirror">
+            <p class="mirror__label">{shared.hero.mirrorLabel}</p>
+            {segmentIds.map((id) => (
+              <ul class="mirror__list" data-seg-variant={id}>
+                {segments[id].hero.mirror.map((line) => <li>{line}</li>)}
+              </ul>
+            ))}
+          </div>
+        </div>
+      )
+    }
+    <a class="hero__cue" href="#solution">
+      <span>{shared.hero.readingInvitation}</span>
+      <Icon name="arrow-down" />
+    </a>
+    {
+      teaser.enabled && (
+        <div class="teaser" data-reward-teaser>
+          <span class="teaser__icon"><Icon name={teaser.icon} /></span>
+          <div>
+            <p class="teaser__head">{teaser.headline}</p>
+            <p class="teaser__text">{teaser.description}</p>
           </div>
         </div>
       )

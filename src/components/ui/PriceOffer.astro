@@ -1,0 +1,83 @@
+---
+import type { CourseOffer } from "../../content/course-offer";
+import Cta from "./Cta.astro";
+import Icon from "./Icon.astro";
+
+/**
+ * The Early Bird offer, used by the landing page and by /course-content. Every number comes from
+ * course-offer.json through the offer object, so the two pages can never disagree.
+ */
+interface Props {
+  offer: CourseOffer;
+  headingId: string;
+  eyebrow: string;
+  headline: string;
+  description: string;
+  /** Optional extra sentence under the description. */
+  intro?: string;
+  ctaLabel: string;
+  ctaId: string;
+  ctaLocation: "course_offer";
+}
+const { offer, headingId, eyebrow, headline, description, intro, ctaLabel, ctaId, ctaLocation } = Astro.props;
+const { copy } = offer;
+const showPricing = offer.showPricing;
+const early = offer.earlyBirdActive && showPricing;
+const deadline = offer.data.pricing.earlyBirdDeadline && copy.deadlineLabel ? copy.deadlineLabel : null;
+const seatLimit = offer.data.pricing.earlyBirdSeatLimit !== null && copy.seatLimitLabel ? copy.seatLimitLabel : null;
+const status = offer.enrollmentOpen ? copy.openNote : copy.upcomingNote;
+---
+
+<div class="offer">
+  <div class="offer__lead">
+    <p class="offer__eyebrow">{eyebrow}</p>
+    <h2 id={headingId} class="offer__head">{headline}</h2>
+    <p class="lead">{description}</p>
+    {intro && <p class="offer__intro">{intro}</p>}
+    <ul class="offer__facts">
+      <li>
+        <span class="chip"><Icon name="users" /></span>
+        <p>{copy.capacityMessage}</p>
+      </li>
+      {
+        early && (
+          <li>
+            <span class="chip"><Icon name="wallet" /></span>
+            <p>{copy.earlyBirdMessage}</p>
+          </li>
+        )
+      }
+      <li>
+        <span class="chip"><Icon name="messages-square" /></span>
+        <p>{copy.communityMessage}</p>
+      </li>
+    </ul>
+  </div>
+
+  <div class:list={["offer__panel", { "offer__panel--details": !showPricing }]}>
+    {!showPricing && <p class="offer__details">{copy.detailsNote}</p>}
+    {early && <p class="offer__badge">{copy.discountBadge}</p>}
+    {showPricing && (
+    <dl class="offer__prices">
+      <div class:list={["offer__row", { "offer__row--was": early }]}>
+        <dt>{copy.regularLabel}</dt>
+        <dd><s>{offer.money(offer.regularFee)}</s></dd>
+      </div>
+      {
+        early && (
+          <div class="offer__row offer__row--now">
+            <dt>{copy.earlyBirdLabel}</dt>
+            <dd>{offer.money(offer.earlyBirdFee)}</dd>
+          </div>
+        )
+      }
+    </dl>
+    )}
+    {early && <p class="offer__save">{copy.savingsLine}</p>}
+    {showPricing && deadline && <p class="offer__save">{deadline}</p>}
+    {showPricing && seatLimit && <p class="offer__save">{seatLimit}</p>}
+    {status && <p class="note">{status}</p>}
+    <Cta id={ctaId} location={ctaLocation} label={ctaLabel} earlyBird />
+    {copy.paymentNote && <p class="offer__fine">{copy.paymentNote}</p>}
+  </div>
+</div>

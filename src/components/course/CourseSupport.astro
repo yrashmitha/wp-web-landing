@@ -1,0 +1,31 @@
+---
+import type { CourseContent } from "../../content/course-content.schema";
+import Icon from "../ui/Icon.astro";
+import Section from "../ui/Section.astro";
+
+interface Props {
+  index: number;
+  course: CourseContent;
+}
+const { index, course } = Astro.props;
+const { support } = course;
+---
+
+<Section id="course_support" index={index} tone="tint">
+  <div class="cs">
+    <div class="cs__head">
+      <h2 id="course_support-title" class="head">{support.headline}</h2>
+      <p class="lead">{support.description}</p>
+    </div>
+    <ul class="cs__list">
+      {
+        support.features.map((f) => (
+          <li>
+            <Icon name="check" />
+            <span>{f}</span>
+          </li>
+        ))
+      }
+    </ul>
+  </div>
+</Section>

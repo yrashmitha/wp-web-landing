@@ -9,14 +9,21 @@ interface Props {
   description: string;
   lang: string;
   initial: string;
+  /** True on the root page: ?segment= may then choose the audience. */
+  isDefault: boolean;
+  siteName: string;
+  /** The page path, for the canonical link. Defaults to the landing page. */
+  path?: string;
+  /** Lets page-init run page-specific tracking, for example "course_content". */
+  pageKind?: string;
   /** When false the page is the neutral version only: no chooser, no campaign routes. */
   personalize: boolean;
   status: string;
 }
-const { title, description, lang, initial, personalize, status } = Astro.props;
+const { title, description, lang, initial, isDefault, siteName, path = "/", pageKind, personalize, status } = Astro.props;
 
 // Every audience version points at the root so the campaign routes never compete with it in search.
-const canonical = siteConfig.url ? new URL("/", siteConfig.url).toString() : null;
+const canonical = siteConfig.url ? new URL(path, siteConfig.url).toString() : null;
 const initScript = `// Runs before first paint. A choice the visitor made on this exact page wins; otherwise ?segment= on the neutral page.
 (function () {
   try {
@@ -25,14 +32,14 @@ const initScript = `// Runs before first paint. A choice the visitor made on thi
     var saved = (sessionStorage.getItem("wdm_seg_manual") || "").split("|");
     var q = new URLSearchParams(location.search).get("segment");
     if (saved[0] === location.pathname && ok.indexOf(saved[1]) > -1) { d.setAttribute("data-seg", saved[1]); d.setAttribute("data-seg-source", "manual"); }
-    else if (q && ok.indexOf(q) > -1 && d.getAttribute("data-seg") === "neutral") { d.setAttribute("data-seg", q); d.setAttribute("data-seg-source", "url_param"); }
+    else if (q && ok.indexOf(q) > -1 && d.getAttribute("data-seg-source") === "default") { d.setAttribute("data-seg", q); d.setAttribute("data-seg-source", "url_param"); }
   } catch (e) {}
 })();`;
 const htmlLang = lang.split("-")[0];
 ---
 
 <!doctype html>
-<html lang={htmlLang} data-seg={initial} data-seg-source={initial === "neutral" ? "default" : "route"} data-course-status={status}>
+<html lang={htmlLang} data-seg={initial} data-seg-source={isDefault ? "default" : "route"} data-course-status={status}>
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
@@ -45,6 +52,7 @@ const htmlLang = lang.split("-")[0];
     <meta name="description" content={description} />
     {canonical && <link rel="canonical" href={canonical} />}
     <meta property="og:type" content="website" />
+    <meta property="og:site_name" content={siteName} />
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
     <meta property="og:locale" content={lang.replace("-", "_")} />
@@ -54,7 +62,7 @@ const htmlLang = lang.split("-")[0];
     <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
     {import.meta.env.PROD && !siteConfig.url && <meta name="robots" content="noindex" />}
   </head>
-  <body>
+  <body data-page={pageKind}>
     <a class="skip" href="#main">{siteConfig.skipLabel}</a>
     <slot name="nav" />
     <main id="main">

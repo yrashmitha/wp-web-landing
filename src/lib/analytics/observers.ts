@@ -12,6 +12,8 @@ interface SectionTrack {
   visible: boolean;
   viewTimer: number | undefined;
   viewed: boolean;
+  /** The section shows the offer, so pricing_section_viewed fires with section_viewed. */
+  pricing: boolean;
 }
 
 export function observeSections(): void {
@@ -26,6 +28,7 @@ export function observeSections(): void {
       visible: false,
       viewTimer: undefined,
       viewed: false,
+      pricing: el.dataset.pricingSection !== undefined,
     }),
   );
 
@@ -37,6 +40,7 @@ export function observeSections(): void {
         t.viewTimer = window.setTimeout(() => {
           t.viewed = true;
           track("section_viewed", { section_id: t.id, section_index: t.index, segment_id: getSegment().id }, "observer");
+          if (t.pricing) track("pricing_section_viewed", { section_id: t.id, active_segment: getSegment().id, page_path: location.pathname, ...getUtms() }, "observer");
         }, VIEW_DWELL_MS);
       }
     } else {
@@ -131,7 +135,109 @@ export function observeCtaClicks(): void {
         },
         "cta",
       );
+      if (link.dataset.reward !== undefined) {
+        track(
+          "reward_whatsapp_clicked",
+          {
+            cta_id: link.dataset.ctaId ?? "unknown",
+            cta_location: link.dataset.ctaLocation ?? "unknown",
+            section_id: link.closest<HTMLElement>("[data-section-id]")?.dataset.sectionId ?? "global",
+            active_segment: seg.id,
+            page_path: location.pathname,
+            page_scroll_percent: s.scrollPercent,
+            ...getUtms(),
+          },
+          "cta",
+        );
+      }
+      if (link.dataset.earlyBird !== undefined) {
+        track(
+          "early_bird_cta_clicked",
+          {
+            cta_id: link.dataset.ctaId ?? "unknown",
+            cta_location: link.dataset.ctaLocation ?? "unknown",
+            section_id: link.closest<HTMLElement>("[data-section-id]")?.dataset.sectionId ?? "global",
+            active_segment: seg.id,
+            page_path: location.pathname,
+            page_scroll_percent: s.scrollPercent,
+            ...getUtms(),
+          },
+          "cta",
+        );
+      }
     },
     { capture: true },
   );
+}
+
+/* Course content: the link from the landing page, the page view and the curriculum weeks ------ */
+
+const safeLabel = (value: string | null, fallback: string): string => (value && /^[a-z0-9_]{1,40}$/.test(value) ? value : fallback);
+
+export function observeCourseContentLinks(): void {
+  document.addEventListener(
+    "click",
+    (event) => {
+      const link = (event.target as Element | null)?.closest<HTMLElement>("[data-course-link]");
+      if (!link) return;
+      track(
+        "course_content_link_clicked",
+        {
+          link_id: link.dataset.courseLink || "unknown",
+          source_section: link.closest<HTMLElement>("[data-section-id]")?.dataset.sectionId ?? "global",
+          active_segment: getSegment().id,
+          page_scroll_percent: getPageState().scrollPercent,
+          ...getUtms(),
+        },
+        "cta",
+      );
+    },
+    { capture: true },
+  );
+}
+
+export function observeCoursePage(): void {
+  if (document.body.dataset.page !== "course_content") return;
+  const width = window.innerWidth;
+  track(
+    "course_content_page_viewed",
+    {
+      source_section: safeLabel(new URLSearchParams(location.search).get("from"), "direct"),
+      active_segment: getSegment().id,
+      page_path: location.pathname,
+      device_type: width < 768 ? "mobile" : width < 1024 ? "tablet" : "desktop",
+      ...getCampaignLabels(),
+      ...getUtms(),
+    },
+    "page",
+  );
+  // <details> toggle events do not bubble, so each week is listened to directly.
+  document.querySelectorAll<HTMLDetailsElement>("details[data-week-id]").forEach((d) =>
+    d.addEventListener("toggle", () => {
+      if (!d.open) return;
+      track("curriculum_week_expanded", { week_id: d.dataset.weekId ?? "unknown", source_section: "curriculum", active_segment: getSegment().id, ...getUtms() }, "observer");
+    }),
+  );
+}
+
+/* The hero's gift teaser: counted once, after it has been on screen long enough to be read ------ */
+
+export function observeRewardTeaser(): void {
+  const el = document.querySelector<HTMLElement>("[data-reward-teaser]");
+  if (!el || !("IntersectionObserver" in window)) return;
+  let timer: number | undefined;
+  const io = new IntersectionObserver(
+    (entries) => {
+      for (const e of entries) {
+        window.clearTimeout(timer);
+        if (!e.isIntersecting) continue;
+        timer = window.setTimeout(() => {
+          track("hero_reward_teaser_viewed", { section_id: "hero", active_segment: getSegment().id, page_path: location.pathname, ...getUtms() }, "observer");
+          io.disconnect();
+        }, 800);
+      }
+    },
+    { threshold: 0.6 },
+  );
+  io.observe(el);
 }

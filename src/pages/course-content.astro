@@ -1,0 +1,54 @@
+---
+import CourseIntro from "../components/course/CourseIntro.astro";
+import CourseSupport from "../components/course/CourseSupport.astro";
+import Curriculum from "../components/course/Curriculum.astro";
+import SiteChrome from "../components/landing/SiteChrome.astro";
+import PriceOffer from "../components/ui/PriceOffer.astro";
+import Section from "../components/ui/Section.astro";
+import { loadContent } from "../content/content-loader";
+import { loadCourseContent } from "../content/course-content-loader";
+import { loadOffer } from "../content/course-offer";
+import Base from "../layouts/Base.astro";
+
+const content = loadContent();
+const course = loadCourseContent();
+const offer = loadOffer();
+const { page } = content;
+const { enrollment } = course;
+---
+
+<Base
+  title={`${course.page.title} | ${page.brand.name}`}
+  description={course.page.description}
+  lang={page.brand.locale}
+  initial={page.settings.defaultSegment}
+  isDefault
+  siteName={page.brand.name}
+  path={course.page.slug}
+  pageKind="course_content"
+  personalize={page.personalization.enabled}
+  status={page.brand.phase}
+>
+  <SiteChrome slot="nav" part="nav" content={content} backLabel={course.page.backLabel} />
+  <CourseIntro index={0} course={course} />
+  <Curriculum index={1} course={course} />
+  <CourseSupport index={2} course={course} />
+  <Section id="course_offer" index={3} tone="night" hideSticky pricing>
+    <PriceOffer
+      offer={offer}
+      headingId="course_offer-title"
+      eyebrow={enrollment.earlyBird.enabled && offer.earlyBirdActive ? enrollment.earlyBird.title : offer.copy.eyebrow ?? ""}
+      headline={enrollment.headline}
+      description={enrollment.description}
+      intro={enrollment.earlyBird.enabled && offer.earlyBirdActive ? enrollment.earlyBird.description : undefined}
+      ctaLabel={enrollment.cta.label}
+      ctaId="course_offer_whatsapp"
+      ctaLocation="course_offer"
+    />
+  </Section>
+  <Fragment slot="after">
+    <SiteChrome part="footer" content={content} />
+    <SiteChrome part="sticky" content={content} />
+    <SiteChrome part="consent" content={content} />
+  </Fragment>
+</Base>

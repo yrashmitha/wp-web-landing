@@ -29,6 +29,22 @@ export interface EventMap {
     traffic_source: string;
     campaign_name: string;
   };
+  /** The secondary link in the course highlights section. An internal navigation, never a registration. */
+  course_content_link_clicked: Utms & { link_id: string; source_section: string; active_segment: SegmentId | "neutral"; page_scroll_percent: number };
+  /** /course-content opened. source_section is where the visitor came from, or "direct". */
+  course_content_page_viewed: Utms & { source_section: string; active_segment: SegmentId | "neutral"; page_path: string; traffic_source: string; campaign_name: string; device_type: DeviceType };
+  /** A week of the curriculum opened. */
+  curriculum_week_expanded: Utms & { week_id: string; source_section: string; active_segment: SegmentId | "neutral" };
+  /** The Early Bird pricing section was at least half visible for a second. Not a lead and not a registration. */
+  pricing_section_viewed: Utms & { section_id: string; active_segment: SegmentId | "neutral"; page_path: string };
+  /** The gift teaser in the hero was at least 60% visible for under a second. It names no discount and no code. */
+  hero_reward_teaser_viewed: Utms & { section_id: string; active_segment: SegmentId | "neutral"; page_path: string };
+  /** The visitor copied the discount code. method says whether the clipboard API or the fallback did it. */
+  discount_code_copied: Utms & { section_id: string; active_segment: SegmentId | "neutral"; page_path: string; method: "clipboard" | "fallback" };
+  /** An outbound click on the reward's WhatsApp button. It fires alongside whatsapp_cta_clicked. */
+  reward_whatsapp_clicked: Utms & { cta_id: string; cta_location: string; section_id: string; active_segment: SegmentId | "neutral"; page_path: string; page_scroll_percent: number };
+  /** An outbound click on a WhatsApp button inside a pricing section. It fires alongside whatsapp_cta_clicked. */
+  early_bird_cta_clicked: Utms & { cta_id: string; cta_location: string; section_id: string; active_segment: SegmentId | "neutral"; page_path: string; page_scroll_percent: number };
 }
 
 export type EventName = keyof EventMap;

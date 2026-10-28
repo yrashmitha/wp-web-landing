@@ -1,0 +1,64 @@
+---
+import type { LoadedContent } from "../../content/content-loader";
+import Icon from "../ui/Icon.astro";
+import Section from "../ui/Section.astro";
+
+interface Props {
+  index: number;
+  content: LoadedContent;
+}
+const { index, content } = Astro.props;
+const bc = content.page.shared.beginnerConfidence;
+const { community } = bc;
+---
+
+<Section id="beginner_confidence" index={index} tone="tint">
+  <div class="bc">
+    <div class="bc__intro">
+      <p class="badge">{bc.eyebrow}</p>
+      <h2 id="beginner_confidence-title" class="bc__worry">{bc.headline}</h2>
+      <span class="bc__arrow" aria-hidden="true"><Icon name="arrow-down" /></span>
+      <div class="bc__answer">
+        <p class="bc__support">{bc.supportingText}</p>
+        <p class="bc__core">{bc.coreMessage}</p>
+      </div>
+    </div>
+
+    <div class="bc__need">
+      <p class="bc__label">{bc.requirementsLabel}</p>
+      <ol class="reqs">
+        {
+          bc.requirements.map((r, i) => (
+            <li>
+              <span class="benefits__n">{String(i + 1).padStart(2, "0")}</span>
+              <p>{r.text}</p>
+            </li>
+          ))
+        }
+      </ol>
+      <div class="bc__goal">
+        <span class="chip"><Icon name="target" /></span>
+        <p><strong>{bc.goalLabel}</strong>{bc.progress}</p>
+      </div>
+    </div>
+
+    <div class="bc__community">
+      <div class="bc__community-head">
+        <h3 class="display-s">{community.headline}</h3>
+        <p class="lead">{community.supportingText}</p>
+      </div>
+      <ul class="perks">
+        {
+          community.benefits.map((b) => (
+            <li>
+              <span class="chip"><Icon name={b.icon} /></span>
+              <p>{b.text}</p>
+            </li>
+          ))
+        }
+      </ul>
+      {community.accessNote && <p class="note">{community.accessNote}</p>}
+      <p class="statement bc__closing">{community.closing}</p>
+    </div>
+  </div>
+</Section>

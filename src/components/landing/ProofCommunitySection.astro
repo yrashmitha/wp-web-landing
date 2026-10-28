@@ -1,0 +1,85 @@
+---
+import type { LoadedContent } from "../../content/content-loader";
+import Icon from "../ui/Icon.astro";
+import Section from "../ui/Section.astro";
+
+interface Props {
+  index: number;
+  content: LoadedContent;
+}
+const { index, content } = Astro.props;
+const { shared, settings } = content.page;
+const t = shared.trust;
+const who = t.instructor;
+const roles = (who.role ?? "").split("|").map((r) => r.trim()).filter(Boolean);
+const since = who.experience.match(/\d{4}/)?.[0] ?? null;
+const sinceRest = since ? who.experience.replace(since, "").trim() : who.experience;
+const photo = settings.showInstructorPhoto ? who.image : null;
+const projects = settings.showPortfolioEvidence ? t.realWork.projects : [];
+---
+
+<Section id="trust" index={index} tone="plain">
+  <div class="trust">
+    <div class="trust__intro">
+      <h2 id="trust-title" class="head">{t.headline}</h2>
+    </div>
+
+    <div class="who">
+      {photo && <img class="who__photo" src={photo.src} width={photo.width} height={photo.height} alt={photo.alt} loading="lazy" decoding="async" />}
+      <div class="who__since">
+        {since && <p class="who__year" aria-hidden="true">{since}</p>}
+        <p class="who__line">{since ? sinceRest : who.experience}</p>
+        <p class="who__badge">{who.experienceBadge}</p>
+      </div>
+      <div class="who__id">
+        {who.name && <p class="who__name">{who.name}</p>}
+        {roles.length > 0 && (
+          <ul class="who__roles">
+            {roles.map((r) => <li>{r}</li>)}
+          </ul>
+        )}
+        <p class="who__client">{who.clientBackground}</p>
+      </div>
+    </div>
+
+    {
+      projects.length > 0 && (
+        <div class="work">
+          <ul class="work__list" aria-label={t.headline}>
+            {projects.map((p) => (
+              <li>
+                {p.url ? (
+                  <a href={p.url} target="_blank" rel="noopener noreferrer">
+                    <img src={p.image.src} width={p.image.width} height={p.image.height} alt={p.image.alt} loading="lazy" decoding="async" />
+                    <span>{p.title}</span>
+                  </a>
+                ) : (
+                  <>
+                    <img src={p.image.src} width={p.image.width} height={p.image.height} alt={p.image.alt} loading="lazy" decoding="async" />
+                    <span>{p.title}</span>
+                  </>
+                )}
+              </li>
+            ))}
+          </ul>
+        </div>
+      )
+    }
+
+    <div class="comm">
+      <h3>{t.community.headline}</h3>
+      <p class="comm__lead">{t.community.description}</p>
+      <ul class="comm__benefits">
+        {
+          t.community.benefits.map((b) => (
+            <li>
+              <span class="chip"><Icon name={b.icon} /></span>
+              <span>{b.text}</span>
+            </li>
+          ))
+        }
+      </ul>
+      <p class="comm__cap">{t.community.capacityNote}</p>
+    </div>
+  </div>
+</Section>

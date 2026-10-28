@@ -1,6 +1,6 @@
 /**
  * Operational configuration. Marketing text lives in src/content/landing-page.json;
- * links, IDs and switches live here and in environment variables (see .env.example).
+ * the WhatsApp contact, IDs and switches live here and in environment variables (see .env.example).
  * Everything read here is public: never put a secret in a PUBLIC_ variable.
  */
 
@@ -8,26 +8,37 @@ const env = import.meta.env;
 
 const clean = (value: string | undefined): string => (value ?? "").trim();
 
-function safeHttpsUrl(value: string, allowedHosts?: string[]): string | null {
+function safeHttpsUrl(value: string): string | null {
   if (!value) return null;
   try {
     const url = new URL(value);
-    if (url.protocol !== "https:") return null;
-    if (allowedHosts && !allowedHosts.includes(url.hostname)) return null;
-    return url.toString();
+    return url.protocol === "https:" ? url.toString() : null;
   } catch {
     return null;
   }
 }
 
-const whatsappUrl = safeHttpsUrl(clean(env.PUBLIC_WHATSAPP_URL), ["chat.whatsapp.com", "wa.me", "whatsapp.com"]);
+/** The one WhatsApp contact for every button on every page. Visitors start a direct chat with this number. */
+const whatsapp = {
+  /** International format, digits only, as wa.me expects. */
+  number: "94718523266",
+  /** How the number is written on the page. */
+  display: "+94 71 852 3266",
+  /** Prefilled into the visitor's message box, so the first message already says what they want. */
+  message: "ආයුබෝවන්! AI + WordPress Web Designing Course එක ගැන වැඩි විස්තර සහ Early Bird Offer එක දැනගන්න කැමතියි.",
+} as const;
+/** A wa.me link to the one contact with any prefilled message, encoded for the query string. */
+export const whatsappLink = (message: string): string => `https://wa.me/${whatsapp.number}?text=${encodeURIComponent(message)}`;
+const whatsappUrl = whatsappLink(whatsapp.message);
+
 const siteUrl = safeHttpsUrl(clean(env.PUBLIC_SITE_URL))?.replace(/\/$/, "") ?? null;
 
 export const siteConfig = {
   /** Canonical origin, or null until PUBLIC_SITE_URL is set. */
   url: siteUrl,
-  /** The single WhatsApp interest group invitation, or null when missing or invalid. */
+  /** The WhatsApp chat link with the prefilled message. */
   whatsappUrl,
+  whatsapp,
   skipLabel: "ප්‍රධාන අන්තර්ගතයට යන්න",
   /** Wording of the analytics consent banner. Operational text, not marketing copy. */
   consent: {

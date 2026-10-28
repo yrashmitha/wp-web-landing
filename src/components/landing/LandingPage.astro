@@ -1,26 +1,30 @@
 ---
 import Base from "../../layouts/Base.astro";
 import { loadContent } from "../../content/content-loader";
-import type { VariantId } from "../../content/landing-page.schema";
+import type { SegmentId } from "../../content/landing-page.schema";
 import SiteChrome from "./SiteChrome.astro";
 import { sectionRegistry } from "./registry";
 
 interface Props {
   /** Which audience version the static HTML starts in. Visitors can switch in place. */
-  initial: VariantId;
+  initial: SegmentId;
+  /** True on the root page, where ?segment= may still pick the audience. Campaign routes always win. */
+  isDefault?: boolean;
 }
-const { initial } = Astro.props;
+const { initial, isDefault = false } = Astro.props;
 const content = loadContent();
 const { page, sections } = content;
 ---
 
 <Base
-  title={page.site.seo.title}
-  description={page.site.seo.description}
-  lang={page.site.language}
-  initial={page.settings.enablePersonalization ? initial : "neutral"}
-  personalize={page.settings.enablePersonalization}
-  status={page.site.status}
+  title={page.brand.seo.title}
+  description={page.brand.seo.description}
+  lang={page.brand.locale}
+  initial={initial}
+  isDefault={isDefault}
+  siteName={page.brand.name}
+  personalize={page.personalization.enabled}
+  status={page.brand.phase}
 >
   <SiteChrome slot="nav" part="nav" content={content} />
   {

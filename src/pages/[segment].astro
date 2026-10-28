@@ -1,11 +1,12 @@
 ---
 import LandingPage from "../components/landing/LandingPage.astro";
 import { loadContent } from "../content/content-loader";
-import { segmentIds, type SegmentId } from "../content/landing-page.schema";
+import type { SegmentId } from "../content/landing-page.schema";
 
 /** Static campaign entry routes: /extra_income/ and /business_growth/ render their own version, no script needed. */
 export function getStaticPaths() {
-  return loadContent().page.settings.enablePersonalization ? segmentIds.map((segment) => ({ params: { segment } })) : [];
+  const { settings, personalization } = loadContent().page;
+  return personalization.enabled ? settings.supportedSegments.map((segment) => ({ params: { segment } })) : [];
 }
 const { segment } = Astro.params;
 ---

@@ -1,5 +1,8 @@
 ---
 import LandingPage from "../components/landing/LandingPage.astro";
+import { loadContent } from "../content/content-loader";
+
+const { defaultSegment } = loadContent().page.settings;
 ---
 
-<LandingPage initial="neutral" />
+<LandingPage initial={defaultSegment} isDefault />

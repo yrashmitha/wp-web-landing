@@ -8,57 +8,32 @@ interface Props {
   content: LoadedContent;
 }
 const { index, content } = Astro.props;
-const bc = content.page.shared.beginnerConfidence;
-const { community } = bc;
+const c = content.page.shared.confidence;
 ---
 
-<Section id="beginner_confidence" index={index} tone="tint">
+<Section id="confidence" index={index} tone="tint">
   <div class="bc">
     <div class="bc__intro">
-      <p class="badge">{bc.eyebrow}</p>
-      <h2 id="beginner_confidence-title" class="bc__worry">{bc.headline}</h2>
+      <h2 id="confidence-title" class="bc__worry">{c.headline}</h2>
       <span class="bc__arrow" aria-hidden="true"><Icon name="arrow-down" /></span>
       <div class="bc__answer">
-        <p class="bc__support">{bc.supportingText}</p>
-        <p class="bc__core">{bc.coreMessage}</p>
+        <p class="bc__core">{c.answer}</p>
+        <p class="bc__support">{c.description}</p>
       </div>
     </div>
 
     <div class="bc__need">
-      <p class="bc__label">{bc.requirementsLabel}</p>
-      <ol class="reqs">
+      <ul class="bc__points">
         {
-          bc.requirements.map((r, i) => (
+          c.points.map((p) => (
             <li>
-              <span class="benefits__n">{String(i + 1).padStart(2, "0")}</span>
-              <p>{r.text}</p>
-            </li>
-          ))
-        }
-      </ol>
-      <div class="bc__goal">
-        <span class="chip"><Icon name="target" /></span>
-        <p><strong>{bc.goalLabel}</strong>{bc.progress}</p>
-      </div>
-    </div>
-
-    <div class="bc__community">
-      <div class="bc__community-head">
-        <h3 class="display-s">{community.headline}</h3>
-        <p class="lead">{community.supportingText}</p>
-      </div>
-      <ul class="perks">
-        {
-          community.benefits.map((b) => (
-            <li>
-              <span class="chip"><Icon name={b.icon} /></span>
-              <p>{b.text}</p>
+              <span class="chip"><Icon name={p.icon} /></span>
+              <p>{p.text}</p>
             </li>
           ))
         }
       </ul>
-      {community.accessNote && <p class="note">{community.accessNote}</p>}
-      <p class="statement bc__closing">{community.closing}</p>
+      <p class="statement bc__closing">{c.closing}</p>
     </div>
   </div>
 </Section>

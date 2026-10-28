@@ -1,0 +1,110 @@
+{
+  "page": {
+    "slug": "/course-content",
+    "title": "AI + WordPress Web Designing, E-commerce & Freelancing",
+    "eyebrow": "30-DAY PRACTICAL LEARNING ROADMAP",
+    "headline": "මුල සිට Website එකක් හදන තැනට. එතැනින් Online Store එකක් සහ Freelancing දක්වා.",
+    "description": "AI, WordPress සහ Elementor භාවිතයෙන් Websites නිර්මාණය කිරීමේ සිට E-commerce, Payment Integrations සහ Client Projects දක්වා පියවරෙන් පියවර ඉගෙනගන්න.",
+    "backLabel": "ප්‍රධාන පිටුවට ආපසු",
+    "delivery": [
+      "Recorded Practical Lessons",
+      "Instructor-led Student Community",
+      "Daily Practice Roadmap",
+      "Limited Batch",
+      "Early Bird Discount"
+    ],
+    "duration": "30 Days",
+    "practice": "දවසට පැයක් පමණ Practice කිරීමට සැලසුම් කළ Learning Roadmap එකක්",
+    "isPaid": true
+  },
+  "weeks": [
+    {
+      "id": "week_1",
+      "title": "Week 01 — Website Foundations",
+      "subtitle": "කිසිම පෙර දැනුමක් නැති තැනින් පටන්ගමු.",
+      "topics": [
+        "Website, Domain, Hosting, SSL ගැන දැනගැනීම",
+        "WordPress Installation සහ Dashboard",
+        "Elementor භාවිතයෙන් Web Pages නිර්මාණය",
+        "AI භාවිතයෙන් Website Planning සහ Content Creation",
+        "පළවෙනි Web Page එක නිර්මාණය කිරීම"
+      ],
+      "outcome": "තමන්ගේම පළවෙනි Web Page එක."
+    },
+    {
+      "id": "week_2",
+      "title": "Week 02 — Professional Business Websites",
+      "subtitle": "ව්‍යාපාරයකට ගැලපෙන Website එකක් හදමු.",
+      "topics": [
+        "Professional Website Layouts සහ Design",
+        "Home, About, Services සහ Contact Pages",
+        "Mobile Responsive Design",
+        "Contact Forms සහ WhatsApp Integration",
+        "Basic SEO, Security සහ Backups",
+        "Domain සහ Hosting මිලදී ගැනීමේ එක් දිනක Practical Demonstration",
+        "Domain, Hosting සහ Website එක සම්බන්ධ කර Live කරන ආකාරය"
+      ],
+      "notice": "මේ අදියරේදී Domain සහ Hosting මිලදී ගැනීම අනිවාර්ය නැහැ. Instructor ක්‍රියාවලිය පෙන්වනවා.",
+      "outcome": "Professional Business Website Project එකක්."
+    },
+    {
+      "id": "week_3",
+      "title": "Week 03 — E-commerce & Online Selling",
+      "subtitle": "Online බඩු විකුණන්න පුළුවන් Website එකක් හදමු.",
+      "topics": [
+        "WooCommerce Introduction",
+        "Products සහ Categories එකතු කිරීම",
+        "Prices, Images සහ Product Pages",
+        "Shopping Cart සහ Checkout",
+        "Customer Orders Collection",
+        "Orders සහ Status Management",
+        "Shipping සහ Delivery Settings",
+        "Payment Gateway Integration",
+        "Test Payments සහ Checkout Testing"
+      ],
+      "outcome": "Test Orders ලබාගත හැකි Demo E-commerce Website එකක්."
+    },
+    {
+      "id": "week_4",
+      "title": "Week 04 — AI Development & Freelancing",
+      "subtitle": "Skill එක Professional Service එකක් බවට පත්කරගන්න.",
+      "topics": [
+        "AI Tools භාවිතයෙන් Website Development වැඩ පහසු කරගැනීම",
+        "Effective Prompting සහ AI Workflows",
+        "AI භාවිතයෙන් Website Content සහ Design Improvements",
+        "AI-generated Websites Review සහ Testing",
+        "Freelance Portfolio සකස් කිරීම",
+        "Local සහ International Client Acquisition Basics",
+        "Website Project Pricing සහ Quotations",
+        "Client Communication සහ Requirements",
+        "Website Handover සහ Maintenance",
+        "Final Project Completion"
+      ],
+      "outcome": "Portfolio එකට එකතු කරන්න පුළුවන් Project එකක් සහ Freelancing Roadmap එකක්."
+    }
+  ],
+  "support": {
+    "headline": "ඔයාගේ ගමනේ අපිත් එක්කම ඉන්නවා.",
+    "description": "Recorded Lessons එක්ක Instructor-led Student Community එකකින් Guidance සහ Questions සඳහා සහයෝගය.",
+    "features": [
+      "Student Questions සඳහා Group Discussion",
+      "Instructor Participation",
+      "Practical Assignments",
+      "Community Learning",
+      "Course එකෙන් පසුවත් Community Connection"
+    ]
+  },
+  "enrollment": {
+    "headline": "මේ Skills ටික ඉගෙනගන්න සූදානම්ද?",
+    "description": "Paid Course එකේ ගාස්තු, ආරම්භක දිනය සහ Registration විස්තර WhatsApp හරහා ලබාගන්න.",
+    "cta": {
+      "label": "වැඩි විස්තර WhatsApp හරහා ලබාගන්න",
+      "action": "join_whatsapp"
+    },
+    "earlyBird": {
+      "enabled": true,
+      "title": "Early Bird Discount",
+      "description": "මුල් කණ්ඩායම සඳහා විශේෂ වට්ටමක්. විස්තර WhatsApp හරහා ලබාගන්න."
+    }
+  }
+}

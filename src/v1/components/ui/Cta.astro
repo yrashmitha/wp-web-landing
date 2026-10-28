@@ -1,0 +1,35 @@
+---
+import { siteConfig } from "../../../config/site";
+import { variantIds, type VariantId } from "../../content/landing-page.schema";
+import Icon from "./Icon.astro";
+
+interface Props {
+  /** Stable id used in analytics (cta_id). Never display text. */
+  id: string;
+  /** Placement name used in analytics (cta_location). Stable, never display text. */
+  location: "hero" | "final" | "mobile_sticky";
+  /** One label, or one per audience version when the visible text changes with the audience. */
+  label: string | Record<VariantId, string>;
+}
+const { id, location, label } = Astro.props;
+const href = siteConfig.whatsappUrl;
+const labels = typeof label === "string" ? null : label;
+const classes = "btn btn--go";
+---
+
+{
+  href ? (
+    <a class={classes} href={href} target="_blank" rel="noopener noreferrer" data-cta-id={id} data-cta-location={location}>
+      <Icon name="message-circle" />
+      {labels ? variantIds.map((v) => <span data-seg-variant={v}>{labels[v]}</span>) : <span>{label as string}</span>}
+      <Icon name="arrow-right" class="btn__arrow" />
+    </a>
+  ) : (
+    <span class={`${classes} is-disabled`} role="link" aria-disabled="true" data-cta-id={id} data-cta-location={location} data-cta-preview="true">
+      <Icon name="message-circle" />
+      {labels ? variantIds.map((v) => <span data-seg-variant={v}>{labels[v]}</span>) : <span>{label as string}</span>}
+      <Icon name="arrow-right" class="btn__arrow" />
+      <span class="visually-hidden"> (WhatsApp link not configured yet)</span>
+    </span>
+  )
+}

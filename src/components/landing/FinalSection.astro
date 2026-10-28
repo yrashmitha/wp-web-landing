@@ -1,6 +1,7 @@
 ---
 import type { LoadedContent } from "../../content/content-loader";
-import { variantIds } from "../../content/landing-page.schema";
+import { loadOffer } from "../../content/course-offer";
+import { siteConfig, whatsappLink } from "../../config/site";
 import Cta from "../ui/Cta.astro";
 import Icon from "../ui/Icon.astro";
 import Section from "../ui/Section.astro";
@@ -10,38 +11,57 @@ interface Props {
   content: LoadedContent;
 }
 const { index, content } = Astro.props;
-const { shared, segments } = content.page;
-const final = shared.finalCTA;
-const text = {
-  neutral: { headline: final.headline, description: final.description },
-  extra_income: segments.extra_income.finalCTA,
-  business_growth: segments.business_growth.finalCTA,
-};
+const { shared, cta } = content.page;
+const final = shared.final_cta;
+const reward = shared.finalReward;
+// The batch size and the discount are typed once, in course-offer.json, and filled in here.
+const offer = loadOffer();
+if (reward.enabled && reward.discountPercent !== offer.discountPercent) {
+  throw new Error(`finalReward.discountPercent (${reward.discountPercent}) must match the Early Bird discount calculated in course-offer.json (${offer.discountPercent}).`);
+}
+// The reward placeholders go first: offer.fill drops any placeholder it does not own.
+const fill = (template: string): string => offer.fill(template.replaceAll("{discount}", `${reward.discountPercent}%`).replaceAll("{code}", reward.discountCode));
+const rewardUrl = whatsappLink(fill(reward.prefilledMessage));
 ---
 
 <Section id="final_cta" index={index} tone="brand" hideSticky>
   <div class="final">
     <div class="final__lead">
-      <h2 id="final_cta-title" class="display">
-        {variantIds.map((v) => <span data-seg-variant={v}>{text[v].headline}</span>)}
-      </h2>
-      <p class="lead">
-        {variantIds.map((v) => <span data-seg-variant={v}>{text[v].description}</span>)}
+      <p class="final__eyebrow">{final.eyebrow}</p>
+      <h2 id="final_cta-title" class="display">{fill(final.headline)}</h2>
+      <p class="lead">{fill(final.description)}</p>
+      <p class="final__early">
+        <Icon name="sparkles" />
+        <span>{final.earlyBird}</span>
       </p>
     </div>
     <div class="final__act">
-      <ul class="value">
-        {
-          final.value.map((v) => (
-            <li>
-              <Icon name="check" />
-              <span>{v}</span>
-            </li>
-          ))
-        }
-      </ul>
-      <Cta id={final.cta.id} location="final" label={final.cta.label} />
-      <p class="final__note">{final.microcopy}</p>
+      {
+        reward.enabled ? (
+          <>
+            <p class="reward__eyebrow">{reward.eyebrow}</p>
+            <h3 class="reward__head">{reward.headline}</h3>
+            <p class="reward__text">{fill(reward.description)}</p>
+            <div class="reward__code">
+              <p class="reward__value" id="reward-code">
+                <span class="visually-hidden">Discount code: </span>
+                <span>{reward.discountCode}</span>
+              </p>
+              <button type="button" class="btn btn--line reward__copy" data-copy-code={reward.discountCode} data-copied-label={reward.copiedLabel} aria-describedby="reward-code">
+                <Icon name="copy" />
+                <span data-copy-label>{reward.copyButtonLabel}</span>
+              </button>
+            </div>
+            <p class="reward__how">{reward.codeInstruction}</p>
+            <p class="visually-hidden" role="status" aria-live="polite" data-copy-status></p>
+            <Cta id={content.ctaIds.final} location="final" label={fill(reward.ctaLabel)} href={rewardUrl} reward />
+          </>
+        ) : (
+          <Cta id={content.ctaIds.final} location="final" label={cta.label} />
+        )
+      }
+      <p class="final__number">WhatsApp: <span dir="ltr">{siteConfig.whatsapp.display}</span></p>
+      <p class="final__note final__note--strong">{reward.enabled ? reward.paidDisclosure : final.paidDisclosure}</p>
     </div>
   </div>
 </Section>

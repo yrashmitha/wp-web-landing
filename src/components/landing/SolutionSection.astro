@@ -1,0 +1,56 @@
+---
+import type { LoadedContent } from "../../content/content-loader";
+import Icon from "../ui/Icon.astro";
+import Section from "../ui/Section.astro";
+
+interface Props {
+  index: number;
+  content: LoadedContent;
+}
+const { index, content } = Astro.props;
+const s = content.page.shared.solution;
+// The closing line is two sentences: the skill first, the AI second. They are set on two lines.
+const [skillFirst = "", ...aiRest] = s.aiReveal.closing.split(/(?<=\.)\s+/);
+const aiThen = aiRest.join(" ");
+---
+
+<Section id="solution" index={index} tone="plain">
+  <div class="sol">
+    <div class="sol__head">
+      <p class="badge">{s.eyebrow}</p>
+      <h2 id="solution-title" class="head">{s.headline}</h2>
+      <p class="lead">{s.description}</p>
+    </div>
+
+    <ul class="sol__caps">
+      {
+        s.capabilities.map((c) => (
+          <li>
+            <span class="chip"><Icon name={c.icon} /></span>
+            <span>{c.label}</span>
+          </li>
+        ))
+      }
+    </ul>
+
+    <div class="sol__ai">
+      <div class="sol__ai-lead">
+        <span class="sol__ai-chip"><Icon name="sparkles" /></span>
+        <p class="sol__ai-eyebrow">{s.aiReveal.eyebrow}</p>
+        <h3 class="sol__ai-head">{s.aiReveal.headline}</h3>
+      </div>
+      <div class="sol__ai-body">
+        <p class="sol__ai-text">{s.aiReveal.description}</p>
+        <p class="sol__ai-close">
+          <span>{skillFirst}</span>
+          {aiThen && <strong>{aiThen}</strong>}
+        </p>
+      </div>
+    </div>
+
+    <a class="btn btn--line sol__cta" href={s.secondaryCTA.href} data-course-link={s.secondaryCTA.id} data-carry data-from="solution">
+      <span>{s.secondaryCTA.label}</span>
+      <Icon name="arrow-right" class="btn__arrow" />
+    </a>
+  </div>
+</Section>

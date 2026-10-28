@@ -1,5 +1,8 @@
 # Product
 
+> **Edition 5 (current): five sections.** `hero`, `solution`, `confidence`, `trust`, `final_cta`. Only the hero differs by audience (`segments.<id>.hero`). The recognition, vision/commitment, course-highlights and early-bird sections were merged into these five and removed. The CTA is a direct WhatsApp chat with the number in `src/config/site.ts`. No price, discount or saving is shown on any page (`course-offer.json` → `display.showPricing: false`). Sections below that describe the older nine-section layout are superseded by this note.
+
+
 <!-- impeccable:product-schema 1 -->
 
 ## Platform
@@ -12,11 +15,11 @@ Sinhala-speaking beginners in Sri Lanka, roughly 18 to 40, who own a laptop and 
 
 ## Product Purpose
 
-Landing page for "100 Web Designers Mission", the interest-collection stage of a PAID practical course, "AI + WordPress Web Designing & Freelancing", taught in Sinhala by Yohan Rashmitha. The only conversion is an outbound click to a WhatsApp interest group where fee, start date, curriculum and registration will be announced. Joining the group is not enrolment, not payment and not a free course.
+Landing page for "Next Step Academy" (programme: 100 Web Designers Mission), the interest-collection stage of a PAID practical course, "AI + WordPress Web Designing & Freelancing", taught in Sinhala by Yohan Rashmitha. The only conversion is an outbound click to a WhatsApp interest group where fee, start date, curriculum and registration will be announced. Joining the group is not enrolment, not payment and not a free course.
 
 ## Positioning
 
-Value first: help the visitor recognise their aim (extra income or a stronger business), see the skill as a way there, meet the instructor, and ask for details in a WhatsApp group. Two campaign versions, one set of course facts.
+Future-self first: show a better 2027, let the visitor recognise themselves, frame Rs. 100,000 a month as an aspiration (never a promise), ask for one hour a day, then reveal AI + WordPress Web Designing, remove doubt, show the instructor and invite them to the WhatsApp group. Two campaign versions, one set of course facts.
 
 ## Operating Context
 
@@ -24,15 +27,15 @@ Sinhala copy mixed with English technical terms. Single static Astro page, conte
 
 ## Capabilities and Constraints
 
-- Content comes from `src/content/landing-page.json` (Zod validated). The page has five sections only: hero, recognition, opportunity, instructor, final CTA. The website demo, income calculator, long FAQ and price are removed and cannot be re-enabled from the JSON.
-- Never imply the course or group is free. Fee, start date and curriculum are undecided and announced in the group.
+- Content comes from `src/content/landing-page.json` (Zod validated, v4). Seven sections in the JSON's order: hero, recognition, vision and commitment, solution reveal, beginner confidence, proof and community, final CTA. The previous edition lives at `/v1/`. The website demo, income calculator, long FAQ and price are removed and cannot be re-enabled from the JSON.
+- Never imply the course or group is free. The first batch (20 students) and fees (regular, Early Bird) are fixed in `src/content/course-offer.json` and shown on both pages as an upcoming offer; the start date and Early Bird deadline are not decided and are never invented. The syllabus lives in `src/content/course-content.json`.
 - No fake urgency, testimonials, students, certificates, client logos or guaranteed earnings. The two-hour claim stays hidden unless the owner verifies it.
 - No real instructor photo yet: never generate one.
 - WCAG 2.2 AA, reduced motion respected, Sinhala must wrap and set naturally.
 
 ## Brand Commitments
 
-Name: 100 Web Designers Mission. Personality: premium, trustworthy, friendly, modern, technology-forward, ambitious without hype.
+Name: Next Step Academy. Personality: premium, trustworthy, friendly, modern, technology-forward, ambitious without hype.
 
 ## Evidence on Hand
 

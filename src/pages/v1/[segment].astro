@@ -1,0 +1,13 @@
+---
+import LandingPage from "../../v1/components/landing/LandingPage.astro";
+import { loadContent } from "../../v1/content/content-loader";
+import { segmentIds, type SegmentId } from "../../v1/content/landing-page.schema";
+
+/** Previous edition kept for reference: /v1/extra_income/ and /v1/business_growth/. */
+export function getStaticPaths() {
+  return loadContent().page.settings.enablePersonalization ? segmentIds.map((segment) => ({ params: { segment } })) : [];
+}
+const { segment } = Astro.params;
+---
+
+<LandingPage initial={segment as SegmentId} />

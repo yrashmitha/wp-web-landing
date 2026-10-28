@@ -2,8 +2,8 @@ import { siteConfig } from "../config/site";
 import { getConsent, getSegment, startAnalytics, track } from "./analytics";
 import { writeConsent } from "./analytics/consent";
 import { hasAnyDestination } from "./analytics/destinations";
-import { observeCtaClicks, observeScrollDepth, observeSections } from "./analytics/observers";
-import { getAttribution } from "./attribution";
+import { observeCourseContentLinks, observeCoursePage, observeCtaClicks, observeRewardTeaser, observeScrollDepth, observeSections } from "./analytics/observers";
+import { getAttribution, getUtms } from "./attribution";
 import type { SegmentId } from "./analytics/types";
 
 /* Consent banner ---------------------------------------------------------------------- */
@@ -27,7 +27,7 @@ function initConsentBanner(): void {
 
 function initStickyCta(): void {
   const bar = document.getElementById("sticky-cta");
-  const hero = document.querySelector<HTMLElement>("[data-section-id='hero']");
+  const hero = document.querySelector<HTMLElement>("[data-section-id='hero'], [data-sticky-after]");
   if (!bar || !hero || !("IntersectionObserver" in window)) return;
   let pastHero = false;
   const covering = new Set<Element>();
@@ -69,11 +69,86 @@ function initProgressAndReveal(): void {
       }),
     { rootMargin: "0px 0px -6% 0px" },
   );
-  document.querySelectorAll<HTMLElement>(".s > .container > *").forEach((el, i) => {
+  // Long sections reveal piece by piece as each piece arrives; short blocks reveal whole.
+  const pieces = ".sol__head, .sol__caps > li, .sol__ai, .sol__cta, .bc__intro > *, .bc__points, .bc__closing, .trust > *, .final__lead > *, .final__act";
+  const targets: HTMLElement[] = [];
+  document.querySelectorAll<HTMLElement>(".s > .container > *").forEach((el) => {
+    if (!el.querySelector(pieces)) targets.push(el);
+  });
+  document.querySelectorAll<HTMLElement>(pieces).forEach((el) => targets.push(el));
+  targets.forEach((el, i) => {
     if (el.getBoundingClientRect().top < window.innerHeight) return;
     el.classList.add("rv");
     el.style.setProperty("--d", `${(i % 3) * 60}ms`);
     io.observe(el);
+  });
+
+  // The primary button draws the eye once, when it first scrolls into view.
+  const seen = new IntersectionObserver(
+    (entries) =>
+      entries.forEach((e) => {
+        if (e.isIntersecting) {
+          e.target.classList.add("is-seen");
+          seen.unobserve(e.target);
+        }
+      }),
+    { threshold: 0.9 },
+  );
+  document.querySelectorAll<HTMLElement>(".btn--go").forEach((b) => seen.observe(b));
+}
+
+/* Copy the discount code: the clipboard API first, a selected-text fallback second, never a silent failure ------ */
+
+function legacyCopy(text: string): boolean {
+  const field = document.createElement("textarea");
+  field.value = text;
+  field.setAttribute("readonly", "");
+  field.style.position = "fixed";
+  field.style.opacity = "0";
+  document.body.append(field);
+  field.select();
+  let ok = false;
+  try {
+    ok = document.execCommand("copy");
+  } catch {
+    ok = false;
+  }
+  field.remove();
+  return ok;
+}
+
+function initCopyCode(): void {
+  document.querySelectorAll<HTMLButtonElement>("[data-copy-code]").forEach((btn) => {
+    const label = btn.querySelector<HTMLElement>("[data-copy-label]");
+    const status = document.querySelector<HTMLElement>("[data-copy-status]");
+    const idle = label?.textContent ?? "";
+    let reset: number | undefined;
+    btn.addEventListener("click", async () => {
+      const code = btn.dataset.copyCode ?? "";
+      let method: "clipboard" | "fallback" = "clipboard";
+      try {
+        await navigator.clipboard.writeText(code);
+      } catch {
+        method = "fallback";
+        if (!legacyCopy(code)) {
+          // Nothing could be copied: select the visible code so the visitor can copy it by hand.
+          const target = document.getElementById(btn.getAttribute("aria-describedby") ?? "");
+          if (target) window.getSelection()?.selectAllChildren(target);
+          return;
+        }
+      }
+      const done = btn.dataset.copiedLabel ?? idle;
+      btn.classList.add("is-copied");
+      if (label) label.textContent = done;
+      if (status) status.textContent = done;
+      window.clearTimeout(reset);
+      reset = window.setTimeout(() => {
+        btn.classList.remove("is-copied");
+        if (label) label.textContent = idle;
+        if (status) status.textContent = "";
+      }, 2400);
+      track("discount_code_copied", { section_id: btn.closest<HTMLElement>("[data-section-id]")?.dataset.sectionId ?? "global", active_segment: getSegment().id, page_path: location.pathname, method, ...getUtms() }, "cta");
+    });
   });
 }
 
@@ -113,6 +188,27 @@ function initSegmentChoice(): void {
   syncSegmentUi();
 }
 
+/* Internal links that carry the audience and campaign context to the next page ------------------
+   The href works without this script. With it, ?segment= and the UTM labels travel along, so the next page
+   reports the same audience and campaign. Click identifiers such as fbclid are never copied. */
+
+function carryContext(): void {
+  const { id } = getSegment();
+  const utms = getUtms();
+  document.querySelectorAll<HTMLAnchorElement>("a[data-carry]").forEach((a) => {
+    const url = new URL(a.getAttribute("href") ?? "/", location.origin);
+    if (id !== "neutral") url.searchParams.set("segment", id);
+    for (const [key, value] of Object.entries(utms)) value ? url.searchParams.set(key, value) : url.searchParams.delete(key);
+    if (a.dataset.from) url.searchParams.set("from", a.dataset.from);
+    a.setAttribute("href", `${url.pathname}${url.search}`);
+  });
+}
+
+function initCarry(): void {
+  carryContext();
+  document.addEventListener("click", (event) => (event.target as Element | null)?.closest("a[data-carry]") && carryContext(), { capture: true });
+}
+
 /* Boot -------------------------------------------------------------------------------- */
 
 document.documentElement.classList.add("js");
@@ -120,11 +216,12 @@ initConsentBanner();
 initStickyCta();
 initProgressAndReveal();
 initSegmentChoice();
+initCarry();
+initCopyCode();
 startAnalytics();
 observeSections();
 observeScrollDepth();
 observeCtaClicks();
-
-if (import.meta.env.DEV && !siteConfig.whatsappUrl) {
-  console.warn("[100 Web Designers Mission] LAUNCH BLOCKER: PUBLIC_WHATSAPP_URL is missing or invalid. CTAs render as disabled previews. See .env.example.");
-}
+observeCourseContentLinks();
+observeCoursePage();
+observeRewardTeaser();

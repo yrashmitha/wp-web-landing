@@ -1,0 +1,37 @@
+---
+import graduationCap from "lucide-static/icons/graduation-cap.svg?raw";
+import messagesSquare from "lucide-static/icons/messages-square.svg?raw";
+import sprout from "lucide-static/icons/sprout.svg?raw";
+import users from "lucide-static/icons/users.svg?raw";
+import arrowDown from "lucide-static/icons/arrow-down.svg?raw";
+import target from "lucide-static/icons/target.svg?raw";
+import arrowRight from "lucide-static/icons/arrow-right.svg?raw";
+import check from "lucide-static/icons/check.svg?raw";
+import messageCircle from "lucide-static/icons/message-circle.svg?raw";
+import trendingUp from "lucide-static/icons/trending-up.svg?raw";
+import wallet from "lucide-static/icons/wallet.svg?raw";
+
+const icons = {
+  "check": check,
+  "arrow-right": arrowRight,
+  "graduation-cap": graduationCap,
+  "messages-square": messagesSquare,
+  "sprout": sprout,
+  "users": users,
+  "arrow-down": arrowDown,
+  "target": target,
+  "message-circle": messageCircle,
+  "trending-up": trendingUp,
+  "wallet": wallet,
+} as const;
+
+interface Props {
+  name: keyof typeof icons;
+  class?: string;
+}
+const { name, class: extra = "" } = Astro.props;
+// Lucide SVGs are static files from our own dependency, never user content.
+const svg = icons[name].replace(/<!--[\s\S]*?-->/, "").trim();
+---
+
+<span class={`icon ${extra}`.trim()} aria-hidden="true" set:html={svg} />

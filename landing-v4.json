@@ -1,0 +1,201 @@
+{
+  "version": "4.0",
+  "brand": {
+    "name": "100 Web Designers Mission",
+    "courseName": "AI + WordPress Web Designing & Freelancing",
+    "locale": "si-LK",
+    "paid": true,
+    "phase": "interest_collection",
+    "seo": {
+      "title": "2027ට අලුත් ආදායම් ඉලක්කයක් | 100 Web Designers Mission",
+      "description": "2027 පටන් ගනිද්දී මාසික අමතර රු. 100,000ක ආදායම් ඉලක්කයක් වෙනුවෙන් අලුත් Digital Skill එකක් ඉගෙනගන්න. AI + WordPress Paid Training විස්තර WhatsApp හරහා ලබාගන්න."
+    }
+  },
+  "strategy": {
+    "narrative": ["pattern_interrupt", "self_recognition", "future_vision", "small_commitment", "solution_reveal", "beginner_confidence", "proof_community", "whatsapp_conversion"],
+    "psychologyPrinciples": ["self_recognition", "future_pacing", "goal_setting", "self_efficacy", "small_commitment", "credible_authority", "belonging", "clarity"],
+    "editorialGuidelines": {
+      "voice": "conversational_sri_lankan_sinhala",
+      "incomeGoalIsAspirationNotPromise": true,
+      "showPaidDisclosure": true,
+      "noFakeScarcity": true,
+      "noFabricatedTestimonials": true,
+      "doNotPromiseIncomeByJanuary2027": true
+    }
+  },
+  "settings": {
+    "defaultSegment": "extra_income",
+    "supportedSegments": ["extra_income", "business_growth"],
+    "showDemo": false,
+    "showCalculator": false,
+    "showLongFaq": false,
+    "showMobileStickyCTA": true,
+    "showPortfolioEvidence": true,
+    "showInstructorPhoto": true,
+    "courseFee": null,
+    "courseStartDate": null,
+    "whatsappGroupUrl": null
+  },
+  "cta": {
+    "action": "join_whatsapp",
+    "heroLabel": "මගේ පළවෙනි පියවර තියන්න",
+    "stickyLabel": "WhatsApp Group එකට එකතු වෙන්න",
+    "finalLabel": "මටත් මේ ගමනට එකතු වෙන්න ඕනේ",
+    "supportingLine": "Paid Training එකේ විස්තර, ගාස්තු සහ ලියාපදිංචිය ගැන WhatsApp Group එකෙන් දැනගන්න.",
+    "truthNote": "WhatsApp Group එකට එකතු වීම Course එකට ලියාපදිංචි වීමක් හෝ ගෙවීමක් නොවේ."
+  },
+  "personalization": {
+    "enabled": true,
+    "mode": "optional_inline",
+    "question": "ඔයාට මේ වෙනස ඕනේ කොතැනටද?",
+    "options": [
+      {"id": "extra_income", "label": "මගේ මාසික ආදායමට අමතරව", "icon": "wallet"},
+      {"id": "business_growth", "label": "මගේ Business එකට", "icon": "store"}
+    ],
+    "changeLabel": "මගේ ඉලක්කය වෙනස් කරන්න"
+  },
+  "sections": [
+    {"id": "hero", "type": "futureHero", "enabled": true},
+    {"id": "recognition", "type": "recognition", "enabled": true},
+    {"id": "vision_commitment", "type": "visionCommitment", "enabled": true},
+    {"id": "solution", "type": "solutionReveal", "enabled": true},
+    {"id": "confidence", "type": "beginnerConfidence", "enabled": true},
+    {"id": "trust", "type": "proofAndCommunity", "enabled": true},
+    {"id": "final_cta", "type": "finalConversion", "enabled": true}
+  ],
+  "shared": {
+    "hero": {
+      "eyebrow": "2027 | ඔයාගේ ඊළඟ පියවර",
+      "microLabel": "100 WEB DESIGNERS MISSION",
+      "paidDisclosure": "ඉදිරියේදී ආරම්භ වන Paid Practical Training Program එකක්",
+      "scrollCue": "මේ අවස්ථාව ගැන තව ටිකක් බලන්න"
+    },
+    "vision_commitment": {
+      "eyebrow": "අද ගන්න තීරණය",
+      "headline": "අනාගතයක් ගැන හිතන එක වෙනම දෙයක්. ඒ වෙනුවෙන් අද පටන්ගන්න එක වෙනම දෙයක්.",
+      "commitmentHeadline": "ඔයාට වෙන් කරන්න තියෙන්නේ මොනවද?",
+      "commitments": [
+        {"id": "time", "value": "දවසට පැයක්", "description": "ඔයාගේම දියුණුව වෙනුවෙන් Practice කරන්න."},
+        {"id": "effort", "value": "ඉගෙනගන්න උවමනාව", "description": "අලුත් හැකියාවක් ගොඩනගන්න සැබෑ කැමැත්ත."},
+        {"id": "investment", "value": "ඔයා වෙනුවෙන් ආයෝජනයක්", "description": "වටිනා Skill එකක් ඉගෙනගැනීමට කාලය සහ Course ගාස්තුව වෙන් කරන්න සූදානම."}
+      ],
+      "closing": "පළවෙනි පියවර ලොකු එකක් වෙන්න ඕනේ නැහැ. ඒක පටන්ගත්ත එකක් වෙන්නයි ඕනේ."
+    },
+    "solution": {
+      "eyebrow": "ඒ ඉලක්කයට යන ප්‍රායෝගික මාර්ගයක්",
+      "reveal": "ඒකට ඔයා ඉගෙනගන්න යන්නේ AI + WordPress Web Designing & Freelancing.",
+      "description": "Coding මුල සිට දැනගෙන ඉන්න ඕනේ නැතිව, Websites නිර්මාණය කරන හැටි සහ ඒ හැකියාව තමන්ගේ වැඩකට හෝ Client Project එකකට යොදාගන්න හැටි ඉගෙනගන්න Practical Training එකක්.",
+      "threeOutcomes": [
+        {"id": "build", "title": "Websites හදන්න", "description": "Professional Website එකක් මුල සිට ගොඩනගන හැටි."},
+        {"id": "apply", "title": "දැනුම වැඩකට යොදන්න", "description": "තමන්ගේම Project එකකට හෝ ව්‍යාපාරයක අවශ්‍යතාවකට Skill එක යොදාගන්න."},
+        {"id": "grow", "title": "අලුත් අවස්ථා හොයන්න", "description": "Freelancing හෝ Business Growth සඳහා මූලික පදනමක් ගොඩනගන්න."}
+      ]
+    },
+    "confidence": {
+      "eyebrow": "ඔයාටත් පටන්ගන්න පුළුවන්",
+      "headline": "හෝව්... Website හදන්න? මම ඕවා දන්නේ නෑනේ! 😅",
+      "answer": "ඒක තමයි අපි මුල ඉඳන්ම පටන්ගන්නේ.",
+      "description": "කලින් Website හදලා තිබුණේ නැති වුණත් කමක් නැහැ. Coding දැනුමත් අවශ්‍ය නැහැ. පරිගණකයක් භාවිත කරන්න පුළුවන් නම්, පියවරෙන් පියවර ඉගෙනගන්න පටන්ගන්න පුළුවන්.",
+      "monthGoal": "මාසයක් තුළ තමන්ගේම මූලික Website එකක් හදන්න අවශ්‍ය පදනම ගොඩනගන එක අපේ ඉගෙනුම් ඉලක්කය.",
+      "closing": "ඔයා අද දන්න ප්‍රමාණය නෙවෙයි, ඉගෙනගන්න සූදානමයි වැදගත්."
+    },
+    "trust": {
+      "eyebrow": "තනියම නෙවෙයි",
+      "headline": "Course එකකට වඩා, එකට ඉගෙනගන්න Community එකක්.",
+      "description": "ප්‍රශ්නයක් ආවම අහන්න, ඉගෙනගත්ත දේ බෙදාගන්න, Instructor එක්කම ඉදිරියට යන්න පුළුවන් Student Community එකක් ගොඩනගනවා.",
+      "support": [
+        {"id": "ask", "title": "හිරවුණ තැන අහන්න", "description": "Student Group එකේ ප්‍රශ්න අහන්න පුළුවන්."},
+        {"id": "instructor", "title": "Instructorත් Group එකේ", "description": "ඉගෙනගන්න ගමනට මඟපෙන්වන්න Instructor සම්බන්ධ වෙනවා."},
+        {"id": "peers", "title": "එකට ඉදිරියට යන්න", "description": "ඔයා වගේම ඉගෙනගන්න අය එක්ක දැනුම බෙදාගන්න."}
+      ],
+      "instructor": {
+        "name": null,
+        "role": null,
+        "experience": "2016 සිට Freelancing",
+        "clientBackground": "දේශීය සහ විදේශීය Clients සමඟ වැඩ කිරීමේ අත්දැකීම්",
+        "experienceBadge": "10+ Years Experience",
+        "image": null
+      },
+      "realWork": {
+        "heading": "කතා විතරක් නෙවෙයි. කරපු වැඩත් බලන්න.",
+        "projects": [],
+        "emptyStateBehavior": "hide_project_gallery_until_real_projects_are_added"
+      },
+      "supportScopeNote": "Student Community එක Course එකට සහභාගී වන අය සඳහායි. දැනට විස්තර ලබාදෙන WhatsApp Interest Group එක එයින් වෙනස්."
+    },
+    "final_cta": {
+      "eyebrow": "ඔයාගේ පළවෙනි පියවර",
+      "benefitList": ["සම්පූර්ණ Course Content", "ගාස්තු සහ ආරම්භක විස්තර", "ලියාපදිංචි වීමේ නිවේදන"],
+      "paidDisclosure": "මෙය Paid Course එකකි. දැනට WhatsApp Group එකට එකතු වන්නේ ඉදිරි විස්තර දැනගැනීමට පමණයි."
+    }
+  },
+  "segments": {
+    "extra_income": {
+      "hero": {
+        "headline": "2027 පටන් ගනිද්දී මාසෙට අමතර රු. 100,000ක් උපයන ඉලක්කයක් තියෙනවද?",
+        "subheadline": "හැම මාසෙම ලැබෙන එකම ආදායමට අමතරව, ඔයාගේම හැකියාවෙන් තවත් ආදායම් මාර්ගයක් ගොඩනගන්න කැමතිද?",
+        "bridge": "ඒ ඉලක්කයට යන ගමන අද අලුත් Skill එකක් ඉගෙනගන්න තීරණයකින් පටන්ගන්න පුළුවන්.",
+        "ctaContext": "මේ ඉලක්කයට යන Practical Learning Program එක ගැන දැනගන්න."
+      },
+      "recognition": {
+        "eyebrow": "මේ කියන්නේ ඔයාටත්ද?",
+        "headline": "ඔයාටත් මේ දේවල් හිතිලා තියෙනවද?",
+        "statements": [
+          "පඩිය එනවා... ඒත් මාසෙ අන්තිමට තව ටිකක් ඉතුරු වුණා නම් කියලා හිතෙනවා.",
+          "දැනට කරන වැඩ නවත්තන්නේ නැතුව මගේම Income එකක් හදාගන්න පුළුවන් නම් හොඳයි.",
+          "Laptop එකක් තියෙනවා. ඒකෙන් මටම ආදායමක් හදාගන්න Skill එකක් තිබුණා නම්?"
+        ],
+        "closing": "ඔයාට අවශ්‍ය වෙන්නේ තවත් Motivation එකක් විතරක් නෙවෙයි. පටන්ගන්න පුළුවන් මාර්ගයක්."
+      },
+       "vision_commitment": {
+    "visionHeadline": "2027 පටන් ගනිද්දී මාසෙට අමතර රු. 100,000ක්. ඒක ඔයාගේ ඊළඟ ඉලක්කය කරගමුද?",
+    "visionDescription": "හිතලා බලන්න... දැනට ලැබෙන ආදායමට අමතරව, ඔයාගේම හැකියාවෙන් තවත් ආදායම් මාර්ගයක් ගොඩනගාගන්න පුළුවන් වුණොත්? අද ඔයා ඉගෙනගන්න Skill එක, හෙට ඔයාට අලුත් අවස්ථා විවර කරන දෙයක් වෙන්න පුළුවන්.",
+    "timingNote": "2027දී ඔයාට අවශ්‍ය වෙනස වෙනුවෙන් අදම පළවෙනි පියවර තියන්න. දවසට පැයක් ඔයාගේ අනාගතය වෙනුවෙන් වෙන් කරන්න."
+  },
+      "solution": {
+        "bridge": "Business එකකට Website එකක් හදලා දෙන හැකියාව, Freelancing Service එකක් වෙන්න පුළුවන්.",
+        "secondaryValue": "Website එකක් හදන්න ඉගෙනගෙන, Portfolio එකක් හදාගෙන, Clients සමඟ වැඩ කරන මූලික පියවර ඉගෙනගන්න."
+      },
+      "final_cta": {
+        "headline": "ඔයා වෙනුවෙන් පළවෙනි පැය වෙන් කරන්න සූදානම්ද?",
+        "description": "AI + WordPress Web Designing ඉගෙනගෙන අලුත් ආදායම් අවස්ථා හොයාගන්න කැමති නම්, ඉදිරි Paid Training එකේ විස්තර WhatsApp Group එකෙන් දැනගන්න."
+      }
+    },
+    "business_growth": {
+      "hero": {
+        "headline": "2027 පටන් ගනිද්දී ඔයාගේ Business එක අදට වඩා ඉදිරියෙන් තියෙනවා දකින්න කැමතිද?",
+        "subheadline": "Customersලාට ඔයාගේ Products සහ Services හොයාගන්න පහසු, ඔයාටම පාලනය කරන්න පුළුවන් Online Presence එකක් හදාගත්තොත්?",
+        "bridge": "ඒ වෙනස වෙනුවෙන් ඔයාටම වැදගත් Digital Skill එකක් ඉගෙනගන්න අද පටන්ගන්න පුළුවන්.",
+        "ctaContext": "ඔයාගේ Business එකට ප්‍රයෝජනවත් Paid Training එක ගැන දැනගන්න."
+      },
+      "recognition": {
+        "eyebrow": "මේ කියන්නේ ඔයාගේ Business එකටත්ද?",
+        "headline": "Business එක කරන අතරේ මේ දේවල් හිතිලා තියෙනවද?",
+        "statements": [
+          "Facebook Page එකක් තියෙනවා. ඒත් මගේම Website එකක් තිබුණා නම් හොඳයි.",
+          "Products සහ Services ඔක්කොම එකම තැනක පෙන්වන්න පුළුවන් නම් Customersලාට පහසුයි.",
+          "Ads වලින් එන Visitorsලා මොනවද කරන්නේ කියලා මටම තේරුම්ගන්න පුළුවන් නම්?"
+        ],
+        "closing": "ඔයාගේ Business එක ගැන හොඳින්ම දන්නේ ඔයා. ඒක Online පෙන්වන හැටිත් ඉගෙනගන්න පුළුවන්."
+      },
+      "vision_commitment": {
+        "visionHeadline": "ඔයාගේ Business එකට අවශ්‍ය Digital දැනුම, ඔයා ළඟම තිබුණොත්?",
+        "visionDescription": "අලුත් Website එකක්, Campaign එකකට Landing Page එකක්, Visitors ගැන අවබෝධයක්. මේ හැම එකක්ම ආරම්භ වෙන්නේ නිවැරදි Skills ගොඩනගාගැනීමෙන්.",
+        "timingNote": "Business Growth එකට එකම ප්‍රතිඵලයක් හෝ කාල සීමාවක් සහතික කළ නොහැක."
+      },
+      "solution": {
+        "bridge": "ඔයාගේම Business Website එක හදන්න සහ Online Content පාලනය කරන්න පුළුවන් හැකියාවක් ඉගෙනගන්න.",
+        "secondaryValue": "Websites, Landing Pages සහ Website Tracking පිළිබඳ මූලික දැනුම ඔයාගේ Business එකට යොදාගන්න."
+      },
+      "final_cta": {
+        "headline": "ඔයාගේ Business එක වෙනුවෙන් අලුත් Skill එකක් පටන්ගමුද?",
+        "description": "ඔයාගේ Business එකේ Online Presence එක දියුණු කරගන්න අවශ්‍ය Web Designing Skills ඉගෙනගැනීම ගැන විස්තර WhatsApp Group එකෙන් ලබාගන්න."
+      }
+    }
+  },
+  "analytics": {
+    "events": ["page_view", "audience_segment_selected", "section_viewed", "scroll_depth_reached", "whatsapp_cta_clicked"],
+    "scrollMilestones": [25, 50, 75, 100],
+    "trackUtmParameters": true
+  }
+}

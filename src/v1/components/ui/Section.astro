@@ -1,0 +1,26 @@
+---
+interface Props {
+  /** Matches the section id in landing-page.json; also the analytics section_id. */
+  id: string;
+  index: number;
+  /** plain: white page. tint: soft blue-grey band. brand: the strong blue band. */
+  tone?: "plain" | "tint" | "brand";
+  /** The mobile sticky CTA steps aside while this section is on screen. */
+  hideSticky?: boolean;
+  class?: string;
+}
+const { id, index, tone = "plain", hideSticky = false, class: extra = "" } = Astro.props;
+---
+
+<section
+  id={id}
+  class={`s s--${tone} ${extra}`.trim()}
+  data-section-id={id}
+  data-section-index={index}
+  aria-labelledby={`${id}-title`}
+  data-hide-sticky={hideSticky ? "" : undefined}
+>
+  <div class="container">
+    <slot />
+  </div>
+</section>

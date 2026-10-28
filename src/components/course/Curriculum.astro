@@ -1,0 +1,58 @@
+---
+import type { CourseContent } from "../../content/course-content.schema";
+import Icon from "../ui/Icon.astro";
+import Section from "../ui/Section.astro";
+
+interface Props {
+  index: number;
+  course: CourseContent;
+}
+const { index, course } = Astro.props;
+/** "Week 01 — Website Foundations" shows as a week label and a title. Titles without a dash stay whole. */
+const split = (title: string): { label: string; name: string } => {
+  const [label, ...rest] = title.split(" — ");
+  return rest.length ? { label: label ?? title, name: rest.join(" — ") } : { label: "", name: title };
+};
+---
+
+<Section id="curriculum" index={index} tone="plain">
+  <h2 id="curriculum-title" class="visually-hidden">{course.page.title}</h2>
+  <ol class="weeks">
+    {
+      course.weeks.map((w, i) => {
+        const { label, name } = split(w.title);
+        return (
+          <li class="week">
+            <details class="week__d" data-week-id={w.id} open={i === 0}>
+              <summary class="week__sum">
+                {label && <span class="week__n">{label}</span>}
+                <span class="week__t">
+                  <span class="week__name">{name}</span>
+                  <span class="week__sub">{w.subtitle}</span>
+                </span>
+                <span class="week__chev"><Icon name="chevron-down" /></span>
+              </summary>
+              <div class="week__body">
+                <ul class="week__topics">
+                  {
+                    w.topics.map((t) => (
+                      <li>
+                        <Icon name="check" />
+                        <span>{t}</span>
+                      </li>
+                    ))
+                  }
+                </ul>
+                <p class="week__outcome">
+                  <span class="chip"><Icon name="badge-check" /></span>
+                  <span>{w.outcome}</span>
+                </p>
+              </div>
+            </details>
+            {w.notice && <p class="week__notice">{w.notice}</p>}
+          </li>
+        );
+      })
+    }
+  </ol>
+</Section>

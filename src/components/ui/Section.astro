@@ -3,13 +3,17 @@ interface Props {
   /** Matches the section id in landing-page.json; also the analytics section_id. */
   id: string;
   index: number;
-  /** plain: white page. tint: soft blue-grey band. brand: the strong blue band. */
-  tone?: "plain" | "tint" | "brand";
+  /** plain: white page. tint: soft blue-grey band. brand: the strong blue band. night: the deep navy opening band. */
+  tone?: "plain" | "tint" | "brand" | "night";
   /** The mobile sticky CTA steps aside while this section is on screen. */
   hideSticky?: boolean;
+  /** The mobile sticky CTA appears once this section has scrolled past. Used where there is no hero. */
+  stickyAfter?: boolean;
+  /** The section shows the offer: pricing_section_viewed fires with section_viewed. */
+  pricing?: boolean;
   class?: string;
 }
-const { id, index, tone = "plain", hideSticky = false, class: extra = "" } = Astro.props;
+const { id, index, tone = "plain", hideSticky = false, stickyAfter = false, pricing = false, class: extra = "" } = Astro.props;
 ---
 
 <section
@@ -19,6 +23,8 @@ const { id, index, tone = "plain", hideSticky = false, class: extra = "" } = Ast
   data-section-index={index}
   aria-labelledby={`${id}-title`}
   data-hide-sticky={hideSticky ? "" : undefined}
+  data-sticky-after={stickyAfter ? "" : undefined}
+  data-pricing-section={pricing ? "" : undefined}
 >
   <div class="container">
     <slot />

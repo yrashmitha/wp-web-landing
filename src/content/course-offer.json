@@ -1,0 +1,39 @@
+{
+  "courseId": "ai-wordpress-freelancing-2027-batch-01",
+  "batch": {
+    "name": "Founding Batch 01",
+    "capacity": 20,
+    "enrollmentOpen": true
+  },
+  "display": {
+    "showPricing": false
+  },
+  "pricing": {
+    "currency": "LKR",
+    "regularFee": 5000,
+    "earlyBirdFee": 3000,
+    "earlyBirdEnabled": true,
+    "earlyBirdDeadline": null,
+    "earlyBirdSeatLimit": null
+  },
+  "copy": {
+    "eyebrow": "FOUNDING BATCH · EARLY BIRD OFFER",
+    "headline": "ඔයාගේ අනාගතය වෙනුවෙන් {earlyBirdFee}කින් අලුත් Skill එකකට පළවෙනි පියවර තියමුද?",
+    "description": "AI + WordPress Web Designing, E-commerce සහ Freelancing මුල සිට ඉගෙනගන්න Practical Training Program එකක්.",
+    "capacityMessage": "සෑම Student කෙනෙකුටම අවධානය ලබාදීමට Batch එක Students {capacity}කට සීමා කරලා තියෙනවා.",
+    "earlyBirdMessage": "සාමාන්‍ය ගාස්තුව {regularFee}යි. Early Bird Offer එක යටතේ {earlyBirdFee}යි.",
+    "communityMessage": "Recorded Lessons සහ Instructor-led Student Community එකක් එක්ක ඉගෙනගන්න.",
+    "primaryCTA": "වැඩි විස්තර WhatsApp හරහා ලබාගන්න",
+    "paymentNote": null,
+    "detailsHeadline": "ඔයාගේ අනාගතය වෙනුවෙන් අලුත් Skill එකකට පළවෙනි පියවර තියමුද?",
+    "detailsNote": "Course එකේ ගාස්තු සහ ලියාපදිංචි විස්තර WhatsApp හරහා ලබාගන්න.",
+    "regularLabel": "සාමාන්‍ය ගාස්තුව",
+    "earlyBirdLabel": "Early Bird ගාස්තුව",
+    "discountBadge": "{discountPercent} වට්ටමක්",
+    "savingsLine": "ඔයාට ඉතිරි වෙන්නේ {savings}ක්.",
+    "upcomingNote": "ලියාපදිංචිය තවම ආරම්භ වී නැහැ. ආරම්භ වන දිනය WhatsApp හරහා දැනුම් දෙනවා.",
+    "openNote": "ලියාපදිංචිය ආරම්භ වී ඇත. ලියාපදිංචි වීමට WhatsApp හරහා විස්තර ලබාගන්න.",
+    "deadlineLabel": null,
+    "seatLimitLabel": null
+  }
+}
