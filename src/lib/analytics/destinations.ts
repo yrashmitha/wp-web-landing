@@ -67,9 +67,11 @@ function metaDestination(id: string): Destination {
     id: "meta",
     send: (e) =>
       safe(() => {
-        // page_view maps to the standard PageView. Everything else is a custom event:
-        // a WhatsApp click is an outbound click, never reported as a Lead or purchase.
+        // Standard events let Meta optimise ads on them. A WhatsApp click is a Contact
+        // (the visitor reached out), never a Lead or purchase. Everything else is custom.
         if (e.name === "page_view") win.fbq?.("track", "PageView");
+        else if (e.name === "whatsapp_cta_clicked") win.fbq?.("track", "Contact", e.params);
+        else if (e.name === "course_content_page_viewed") win.fbq?.("track", "ViewContent", { content_name: "course_content", ...e.params });
         else win.fbq?.("trackCustom", e.name, e.params);
       }),
   };

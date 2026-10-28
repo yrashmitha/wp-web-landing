@@ -34,7 +34,9 @@ Add UTMs to any of them, for example `/extra_income/?utm_source=facebook&utm_med
 
 `cta_location` values: `hero` (`hero_whatsapp`), `final` (`final_whatsapp`), `mobile_sticky` (`sticky_whatsapp`), `course_highlights` (the id in the JSON), `early_bird` (`early_bird_whatsapp`), `course_offer` (`course_offer_whatsapp`).
 
-A click is an outbound click. A visit to `/course-content`, a pricing view and a WhatsApp click are never reported as a lead, a registration or a payment, and Meta receives them as custom events only.
+A click is an outbound click. A visit to `/course-content`, a pricing view and a WhatsApp click are never reported as a lead, a registration or a payment, and Meta never receives them as Lead, CompleteRegistration or Purchase.
+
+Meta Pixel mapping (`destinations.ts`): `page_view` → `PageView`, `whatsapp_cta_clicked` → `Contact`, `course_content_page_viewed` → `ViewContent`. Every other event is sent with `trackCustom` under its own name. Set `PUBLIC_META_PIXEL_ID` in `.env`; with `PUBLIC_GTM_ID` set instead, the pixel must be configured inside GTM.
 
 Register as custom dimensions in GA4: `segment_id`, `active_segment`, `segment_source`, `cta_id`, `cta_location`, `section_id`, `source_section`, `link_id`, `week_id`, `page_path`, `percent`, `utm_source`, `utm_medium`, `utm_campaign`, `utm_content`, `utm_term`.
 
