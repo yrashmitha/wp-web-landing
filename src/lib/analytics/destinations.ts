@@ -53,9 +53,17 @@ function ga4Destination(id: string): Destination {
 function metaDestination(id: string): Destination {
   const win = w();
   if (!win.fbq) {
-    const fbq = function (...args: unknown[]) {
-      (fbq.queue as unknown[]).push(args);
+    // Meta's standard stub: fbevents.js sets callMethod on this function when it loads, and every
+    // call after that must go through it. Queueing unconditionally would drop all later events.
+    const fbq = function () {
+      // fbevents.js requires the Arguments object itself, not an array
+      // eslint-disable-next-line prefer-rest-params
+      if (fbq.callMethod) (fbq.callMethod as (...a: unknown[]) => void).apply(fbq, arguments as unknown as unknown[]);
+      // eslint-disable-next-line prefer-rest-params
+      else (fbq.queue as unknown[]).push(arguments);
     } as NonNullable<Win["fbq"]>;
+    win._fbq = fbq;
+    fbq.push = fbq;
     fbq.queue = [];
     fbq.loaded = true;
     fbq.version = "2.0";
