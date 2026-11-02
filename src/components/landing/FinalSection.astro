@@ -1,7 +1,7 @@
 ---
 import type { LoadedContent } from "../../content/content-loader";
 import { loadOffer } from "../../content/course-offer";
-import { siteConfig, whatsappLink } from "../../config/site";
+import { siteConfig } from "../../config/site";
 import Cta from "../ui/Cta.astro";
 import Icon from "../ui/Icon.astro";
 import Section from "../ui/Section.astro";
@@ -21,7 +21,6 @@ if (reward.enabled && reward.discountPercent !== offer.discountPercent) {
 }
 // The reward placeholders go first: offer.fill drops any placeholder it does not own.
 const fill = (template: string): string => offer.fill(template.replaceAll("{discount}", `${reward.discountPercent}%`).replaceAll("{code}", reward.discountCode));
-const rewardUrl = whatsappLink(fill(reward.prefilledMessage));
 ---
 
 <Section id="final_cta" index={index} tone="brand" hideSticky>
@@ -54,7 +53,7 @@ const rewardUrl = whatsappLink(fill(reward.prefilledMessage));
             </div>
             <p class="reward__how">{reward.codeInstruction}</p>
             <p class="visually-hidden" role="status" aria-live="polite" data-copy-status></p>
-            <Cta id={content.ctaIds.final} location="final" label={fill(reward.ctaLabel)} href={rewardUrl} reward />
+            <Cta id={content.ctaIds.final} location="final" label={fill(reward.ctaLabel)} reward />
           </>
         ) : (
           <Cta id={content.ctaIds.final} location="final" label={cta.label} />

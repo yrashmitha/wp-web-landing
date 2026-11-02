@@ -27,9 +27,8 @@ const whatsapp = {
   /** Prefilled into the visitor's message box, so the first message already says what they want. */
   message: "ආයුබෝවන්! AI + WordPress Web Designing Course එක ගැන වැඩි විස්තර සහ Early Bird Offer එක දැනගන්න කැමතියි.",
 } as const;
-/** A wa.me link to the one contact with any prefilled message, encoded for the query string. */
-export const whatsappLink = (message: string): string => `https://wa.me/${whatsapp.number}?text=${encodeURIComponent(message)}`;
-const whatsappUrl = whatsappLink(whatsapp.message);
+/** The WhatsApp group invitation. Every button opens it, so visitors join the group directly. Override with PUBLIC_WHATSAPP_URL. */
+const whatsappUrl = safeHttpsUrl(clean(env.PUBLIC_WHATSAPP_URL)) ?? "https://chat.whatsapp.com/HJaawSphRCX5W8Y032i5j9";
 
 const siteUrl = safeHttpsUrl(clean(env.PUBLIC_SITE_URL))?.replace(/\/$/, "") ?? null;
 
